@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeopardy</title>
+
+
+    <!-- jQuery and Bootstrap bundle -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <div class="splash">
+        <h1>WELCOME TO GAME OF THRONES JEOPARDY!</h1>
+        <br><br>
+        <h3>enter your name to start the game:</h3>
+        <input type="text" id="player-name">
+        <button class="start-game">start</button>
+    </div>
+    <div class="container post-splash">
+        <!-- header -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <p>GAME OF THRONES-THEMED</p>
+                <h1 class="display-2">JEOPARDY!</h1>
+            </div>
+        </div>
+        <!-- game board -->
+        <div class="container game-board">
+            <!-- table 4x4, top row lists categories -->
+            <div class="row categories">
+                <div class="col">
+                    <button>NAMES</button>
+                </div>
+                <div class="col">
+                    <button>DEATHS</button>
+                </div>
+                <div class="col">
+                    <button>HOUSES</button>
+                </div>
+                <div class="col">
+                    <button>IMAGES</button>
+                </div>
+            </div>
+            <div class="row questions">
+                <div class="col">
+                    <button class="question names" data-index-number="0">10</button>
+                </div>
+                <div class="col">
+                    <button class="question deaths" data-index-number="0">10</button>
+                </div>
+                <div class="col">
+                    <button class="question houses" data-index-number="0">10</button>
+                </div>
+                <div class="col">
+                    <button class="question images" data-index-number="0">10</button>
+                </div>
+            </div>
+            <div class="row questions">
+                <div class="col">
+                    <button class="question names" data-index-number="1">20</button>
+                </div>
+                <div class="col">
+                    <button class="question deaths" data-index-number="1">20</button>
+                </div>
+                <div class="col">
+                    <button class="question houses" data-index-number="1">20</button>
+                </div>
+                <div class="col">
+                    <button class="question images" data-index-number="1">20</button>
+                </div>
+            </div>
+            <div class="row questions">
+                <div class="col">
+                    <button class="question names" data-index-number="2">30</button>
+                </div>
+                <div class="col">
+                    <button class="question deaths" data-index-number="2">30</button>
+                </div>
+                <div class="col">
+                    <button class="question houses" data-index-number="2">30</button>
+                </div>
+                <div class="col">
+                    <button class="question images" data-index-number="2">30</button>
+                </div>
+            </div>
+        </div>
+        <!-- game updates -->
+        <div>
+            <h3 class="instruction">make a selection to play</h3>
+            <!-- to do: make the instruction blink using JS -->
+            <br>
+            <h3>player name: <span class="player-name"></span></h3>
+            <h3>total points: <span class="current-points"></span></h3>
+        </div>
+    </div>
+    <div class="card-click">
+        <div class="card-body">
+            <h5>Question goes here</h5>
+            <p class="card-text">
+                <input>
+            </p>
+            <button id="player-answer">submit</button>
+        </div>
+    </div>
+</body>
+
+</html>
