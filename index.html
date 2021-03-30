@@ -42,7 +42,7 @@
         </div>
         <!-- game board -->
         <div class="container game-board">
-            <!-- table 4x4, top row lists categories -->
+            <!-- table 5x4, top row lists categories -->
             <div class="row categories">
                 <div class="col">
                     <button>NAMES</button>
@@ -55,6 +55,9 @@
                 </div>
                 <div class="col">
                     <button>IMAGES</button>
+                </div>
+                <div class="col">
+                    <button>CASTLES</button>
                 </div>
             </div>
             <div class="row questions">
@@ -70,6 +73,9 @@
                 <div class="col">
                     <button class="question images" data-index-number="0">10</button>
                 </div>
+                <div class="col">
+                    <button class="question castles" data-index-number="0">10</button>
+                </div>
             </div>
             <div class="row questions">
                 <div class="col">
@@ -84,6 +90,9 @@
                 <div class="col">
                     <button class="question images" data-index-number="1">20</button>
                 </div>
+                <div class="col">
+                    <button class="question castles" data-index-number="1">20</button>
+                </div>
             </div>
             <div class="row questions">
                 <div class="col">
@@ -97,6 +106,9 @@
                 </div>
                 <div class="col">
                     <button class="question images" data-index-number="2">30</button>
+                </div>
+                <div class="col">
+                    <button class="question castles" data-index-number="2">30</button>
                 </div>
             </div>
         </div>
@@ -113,9 +125,9 @@
         <div class="card-body">
             <h5>Question goes here</h5>
             <p class="card-text">
-                <input>
+                <input id="player-answer">
             </p>
-            <button id="player-answer">submit</button>
+            <button id="submit-answer">submit</button>
         </div>
     </div>
 </body>

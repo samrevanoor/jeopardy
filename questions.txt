@@ -38,7 +38,7 @@ A10: hear me roar/hear me roar!
 points: 30
 
 //other
-Q2: Jaime Lannister lost his ___ hand
+Q2: Which hand did Jaime Lannister lose?
 A2: right
 points: 10
 

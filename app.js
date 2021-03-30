@@ -6,7 +6,8 @@ $(document).ready(function () {
     const gamePage = $(".post-splash");
     const playerName = $("#player-name").val();
     const cardClick = $(".card-click");
-    const cardQuestion = $(".card-body h5")
+    const cardQuestion = $(".card-body h5");
+    const playerAnswer = $("#player-answer").val().trim().toLowerCase();
 
     let currentPoints = 0;
 
@@ -62,20 +63,33 @@ $(document).ready(function () {
             question: '<h5>Who is this?</h5><img src="Images/tormund.gif">',
             answer: ["tormund giantsbane", "tormund", "tormund giants bane", "tormund giantbane"],
             points: 30
+        }],
+        castles: [{
+            question: '<h5>Which castle is this?</h5><img src="Images/castle1.jpeg">',
+            answer: ["dragonstone", "dragon stone"],
+            points: 10
+        }, {
+            question: '<h5>Which castle is this?</h5><img src="Images/castle2.png">',
+            answer: ["castle black"],
+            points: 20
+        }, {
+            question: "<h5>Jaqen H'ghar helped Arya escape from ...</h5><img src='Images/castle3.jpeg'>",
+            answer: ["harrenhal", "harren hal", "harrenhall", "harren hall"],
+            points: 30
         }]
     }
 
-    function initGame (){
+    function initGame() {
         landingPage
-            .css ({
+            .css({
                 display: "grid"
             })
         gamePage
-            .css ({
+            .css({
                 display: "none"
             })
         cardClick
-            .css ({
+            .css({
                 display: "none"
             })
     }
@@ -85,8 +99,10 @@ $(document).ready(function () {
 
     $(".question").on("click", renderCard)
 
+    $("#submit-answer").on("click", checkAnswer)
+
     // event handlers
-    function letTheGamesBegin () {
+    function letTheGamesBegin() {
         if ($("#player-name").val() !== "") {
             landingPage
                 .css({
@@ -116,29 +132,69 @@ $(document).ready(function () {
                 display: "block"
             })
         generateQuestion(evt);
+        answeredQuestion(evt);
     }
 
-    function generateQuestion(evt){
+    function renderBoard() {
+        background
+            .css({
+                display: "block",
+            });
+        cardClick
+            .css({
+                display: "none"
+            })
+        $("#player-answer").val("");
+    }
+
+    function generateQuestion(evt) {
         const questionNumber = evt.target.dataset.indexNumber;
         const questionCategory = evt.target.classList;
-        if(questionCategory.contains("names")){
+        if (questionCategory.contains("names")) {
             cardQuestion.html(game.names[questionNumber].question);
         };
-        if(questionCategory.contains("deaths")){
+        if (questionCategory.contains("deaths")) {
             cardQuestion.html(game.deaths[questionNumber].question);
         };
-        if(questionCategory.contains("houses")){
+        if (questionCategory.contains("houses")) {
             cardQuestion.html(game.houses[questionNumber].question);
         };
-        if(questionCategory.contains("images")){
+        if (questionCategory.contains("images")) {
             cardQuestion.html(game.images[questionNumber].question);
             cardClick
-                .css ({
+                .css({
                     padding: "5px 10px 5px 10px",
                     margin: "75px"
                 });
         };
-
+        if (questionCategory.contains("castles")) {
+            cardQuestion.html(game.castles[questionNumber].question);
+            cardClick
+                .css({
+                    padding: "5px 10px 5px 10px",
+                    margin: "75px"
+                });
+        };
     }
+
+    function answeredQuestion(evt) {
+        // evt.target.innerHTML = "<img src='Images/check.png' width='110px' height='60px' padding='0'>";
+        // evt.target.style.backgroundColor = "gray";
+    }
+
+    function checkAnswer(evt) {
+        const questionNumber = evt.target.dataset.indexNumber;
+        console.log($("#player-answer").val().trim().toLowerCase());
+        console.log(this);
+        if(isAnswerCorrect() === true){
+            console.log("hey")
+        }
+        setTimeout(renderBoard, 2000);
+    }
+
+    function isAnswerCorrect(){
+        return true;
+    }
+
     initGame();
 })
