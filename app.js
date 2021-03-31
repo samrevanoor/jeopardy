@@ -1,15 +1,17 @@
 $(document).ready(function () {
 
     // variables
-    const background = $(".container");
-    const landingPage = $(".splash");
-    const gamePage = $(".post-splash");
-    const playerName = $("#player-name").val();
-    const cardClick = $(".card-click");
-    const cardQuestion = $(".card-body h5");
-    const playerAnswer = $("#player-answer").val().trim().toLowerCase();
+    const $background = $(".container");
+    const $landingPage = $(".splash");
+    const $gamePage = $(".post-splash");
+    const $playerName = $("#player-name").val();
+    const $cardClick = $(".card-click");
+    const $cardQuestion = $(".card-body h5");
+    let playerAnswer = "";
 
     let currentPoints = 0;
+    let currentQuestion;
+    let currentCategory;
 
     const game = {
         names: [{
@@ -80,15 +82,15 @@ $(document).ready(function () {
     }
 
     function initGame() {
-        landingPage
+        $landingPage
             .css({
                 display: "grid"
             })
-        gamePage
+        $gamePage
             .css({
                 display: "none"
             })
-        cardClick
+        $cardClick
             .css({
                 display: "none"
             })
@@ -97,18 +99,18 @@ $(document).ready(function () {
     // event listeners
     $(".start-game").on("click", letTheGamesBegin)
 
-    $(".question").on("click", renderCard)
+    $(".question").on("click", handleCardClick)
 
     $("#submit-answer").on("click", checkAnswer)
 
     // event handlers
     function letTheGamesBegin() {
         if ($("#player-name").val() !== "") {
-            landingPage
+            $landingPage
                 .css({
                     display: "none"
                 });
-            gamePage
+            $gamePage
                 .css({
                     display: "block"
                 });
@@ -122,79 +124,119 @@ $(document).ready(function () {
         } return;
     }
 
-    function renderCard(evt) {
-        background
-            .css({
-                display: "none",
-            });
-        cardClick
-            .css({
-                display: "block"
-            })
-        generateQuestion(evt);
+    function handleCardClick(evt){
+        currentQuestion = evt.target.dataset.indexNumber;
+        currentCategory = evt.target.classList;
+        renderCard();
+        generateQuestion(currentQuestion, currentCategory);
         answeredQuestion(evt);
     }
 
+    function renderCard() {
+        $background
+            .css({
+                display: "none",
+            });
+        $cardClick
+            .css({
+                display: "block"
+            })
+    }
+
+    function generateQuestion(currentQuestion, currentCategory) {
+        if (currentCategory.contains("names")) {
+            $cardQuestion.html(game.names[currentQuestion].question);
+        };
+        if (currentCategory.contains("deaths")) {
+            $cardQuestion.html(game.deaths[currentQuestion].question);
+        };
+        if (currentCategory.contains("houses")) {
+            $cardQuestion.html(game.houses[currentQuestion].question);
+        };
+        if (currentCategory.contains("images")) {
+            $cardQuestion.html(game.images[currentQuestion].question);
+            $cardClick
+                .css({
+                    padding: "5px 10px 5px 10px",
+                    margin: "75px"
+                });
+        };
+        if (currentCategory.contains("castles")) {
+            $cardQuestion.html(game.castles[currentQuestion].question);
+            $cardClick
+                .css({
+                    padding: "5px 10px 5px 10px",
+                    margin: "75px"
+                });
+        };
+    }
+
+    // function to make sure the player knows this card has already been played
+    function answeredQuestion(evt) {
+        // evt.target.innerHTML = "<img src='Images/check.png' width='110px' height='60px' padding='0'>";
+        // evt.target.style.backgroundColor = "gray";
+    }
+
+    // function to compare the answer with the correct answers array
+    function checkAnswer(evt) {
+        playerAnswer = $("#player-answer").val().trim().toLowerCase();
+        console.log(playerAnswer);
+        if (currentCategory.contains("names")) {
+            if(game.names[currentQuestion].answer.includes(playerAnswer)){
+                isAnswerCorrect()
+        } else {
+            isAnswerWrong()
+        }};
+        if (currentCategory.contains("deaths")) {
+            if(game.deaths[currentQuestion].answer.includes(playerAnswer)){
+                isAnswerCorrect()
+        } else {
+            isAnswerWrong()
+        }};
+        if (currentCategory.contains("houses")) {
+            if(game.houses[currentQuestion].answer.includes(playerAnswer)){
+                isAnswerCorrect()
+        } else {
+            isAnswerWrong()
+        }};
+        if (currentCategory.contains("images")) {
+            if(game.images[currentQuestion].answer.includes(playerAnswer)){
+                isAnswerCorrect()
+        } else {
+            isAnswerWrong()
+        }};
+        if (currentCategory.contains("castles")) {
+            if(game.castles[currentQuestion].answer.includes(playerAnswer)){
+                isAnswerCorrect()
+        } else {
+            isAnswerWrong()
+        }};
+        setTimeout(renderBoard, 2000);
+    }
+
     function renderBoard() {
-        background
+        $background
             .css({
                 display: "block",
             });
-        cardClick
+        $cardClick
             .css({
                 display: "none"
             })
         $("#player-answer").val("");
     }
 
-    function generateQuestion(evt) {
-        const questionNumber = evt.target.dataset.indexNumber;
-        const questionCategory = evt.target.classList;
-        if (questionCategory.contains("names")) {
-            cardQuestion.html(game.names[questionNumber].question);
-        };
-        if (questionCategory.contains("deaths")) {
-            cardQuestion.html(game.deaths[questionNumber].question);
-        };
-        if (questionCategory.contains("houses")) {
-            cardQuestion.html(game.houses[questionNumber].question);
-        };
-        if (questionCategory.contains("images")) {
-            cardQuestion.html(game.images[questionNumber].question);
-            cardClick
-                .css({
-                    padding: "5px 10px 5px 10px",
-                    margin: "75px"
-                });
-        };
-        if (questionCategory.contains("castles")) {
-            cardQuestion.html(game.castles[questionNumber].question);
-            cardClick
-                .css({
-                    padding: "5px 10px 5px 10px",
-                    margin: "75px"
-                });
-        };
-    }
-
-    function answeredQuestion(evt) {
-        // evt.target.innerHTML = "<img src='Images/check.png' width='110px' height='60px' padding='0'>";
-        // evt.target.style.backgroundColor = "gray";
-    }
-
-    function checkAnswer(evt) {
-        const questionNumber = evt.target.dataset.indexNumber;
-        console.log($("#player-answer").val().trim().toLowerCase());
-        console.log(this);
-        if(isAnswerCorrect() === true){
-            console.log("hey")
-        }
-        setTimeout(renderBoard, 2000);
-    }
-
+    // function to do stuff is answer is correct
     function isAnswerCorrect(){
-        return true;
+        console.log("nice job");
+        // currentPoints += game.deaths[currentQuestion].points;
+        // 
     }
-
+    
+    // function to do stuff if answer is incorrect
+    function isAnswerWrong(){
+        console.log("whoopsies")
+    }
+    
     initGame();
 })
