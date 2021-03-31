@@ -106,6 +106,12 @@ $(document).ready(function () {
 
     $("#submit-answer").on("click", checkAnswer)
 
+    $("#player-answer").keypress(function(e){
+        if(e.which == '13'){
+            checkAnswer();
+        }
+    })
+
     // event handlers
     function letTheGamesBegin() {
         if ($("#player-name").val() !== "") {
@@ -176,6 +182,7 @@ $(document).ready(function () {
                     margin: "75px"
                 });
         };
+        $("audio")[0].play();
     }
 
     function answeredQuestion(evt) {
@@ -243,6 +250,7 @@ $(document).ready(function () {
                 isAnswerWrong()
             }
         };
+        $("audio")[0].pause();
         setTimeout(renderBoard, 2000);
         setTimeout(confetti.stop, 2000);
     }
