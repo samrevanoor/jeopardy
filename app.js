@@ -208,7 +208,6 @@ $(document).ready(function () {
 
     function checkAnswer(evt) {
         playerAnswer = $("#player-answer").val().trim().toLowerCase();
-        console.log(playerAnswer);
         if (currentCategory.contains("names")) {
             if (game.names[currentQuestion].answer.includes(playerAnswer)) {
                 isAnswerCorrect(game.names[currentQuestion].points)
@@ -245,6 +244,7 @@ $(document).ready(function () {
             }
         };
         setTimeout(renderBoard, 2000);
+        setTimeout(confetti.stop, 2000);
     }
 
     function renderBoard() {
@@ -257,18 +257,19 @@ $(document).ready(function () {
                 display: "none"
             })
         $("#player-answer").val("");
+        $("#submit-answer").html("submit");
     }
 
     function isAnswerCorrect(category) {
-        console.log("nice job");
         currentPoints += category;
         console.log(currentPoints);
         $playerPoints.html(currentPoints);
+        confetti.start();
+        $("#submit-answer").html("nice job!");
     }
 
     // function to do stuff if answer is incorrect
     function isAnswerWrong() {
-        console.log("whoopsies")
     }
 
     initGame();
