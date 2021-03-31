@@ -160,14 +160,14 @@ if the answer is a match to any of the options above, add the points to currentP
 update the UI for the points
 clear the card on screen and display a big green check mark
 NICE TO HAVE: confetti ????
-return back to gameBoard after 5 seconds
+return back to gameBoard after 2-3 seconds
 
 function isAnswerWrong:
 if the answer is not a match, do nothing to currentPoints
 do nothing to the UI for the points
 clear the card on screen and display a big red X
 NICE TO HAVE: confetti of sad faces ???
-return back to gameBoard after 5 seconds
+return back to gameBoard after 2-3 seconds
 
 function endOfGame:
 if currentPoints < half of total, display a "try to beat your score" msg

@@ -7,11 +7,14 @@ $(document).ready(function () {
     const $playerName = $("#player-name").val();
     const $cardClick = $(".card-click");
     const $cardQuestion = $(".card-body h5");
-    let playerAnswer = "";
+    let $playerPoints = $(".current-points");
 
+    let playerAnswer = "";
     let currentPoints = 0;
     let currentQuestion;
     let currentCategory;
+
+    let isGameOver = false;
 
     const game = {
         names: [{
@@ -124,9 +127,13 @@ $(document).ready(function () {
         } return;
     }
 
-    function handleCardClick(evt){
-        currentQuestion = evt.target.dataset.indexNumber;
-        currentCategory = evt.target.classList;
+    function handleCardClick(evt) {
+        currentQuestion = this.dataset.indexNumber;
+        currentCategory = this.classList;
+
+        if (currentCategory.contains("disabled")) {
+            return;
+        };
         renderCard();
         generateQuestion(currentQuestion, currentCategory);
         answeredQuestion(evt);
@@ -171,46 +178,72 @@ $(document).ready(function () {
         };
     }
 
-    // function to make sure the player knows this card has already been played
     function answeredQuestion(evt) {
-        // evt.target.innerHTML = "<img src='Images/check.png' width='110px' height='60px' padding='0'>";
-        // evt.target.style.backgroundColor = "gray";
+        evt.target.classList.add("disabled");
+        checkGameStatus();
     }
 
-    // function to compare the answer with the correct answers array
+    function checkGameStatus() {
+        if (Array.from($(".question")).every(el => $(el).hasClass("disabled"))) {
+            isGameOver = true;
+            endGame();
+            return true;
+        } else {
+            isGameOver = false;
+            return false;
+        }
+    }
+
+    function endGame() {
+        if (currentPoints < 150) {
+            console.log("uh oh try again");
+        } else if (currentPoints < 200) {
+            console.log("not bad! you can do better")
+        } else if (currentPoints < 300){
+            console.log("really good job!")
+        } else {
+            console.log("you really know your stuff!")
+        };
+    }
+
     function checkAnswer(evt) {
         playerAnswer = $("#player-answer").val().trim().toLowerCase();
         console.log(playerAnswer);
         if (currentCategory.contains("names")) {
-            if(game.names[currentQuestion].answer.includes(playerAnswer)){
-                isAnswerCorrect()
-        } else {
-            isAnswerWrong()
-        }};
+            if (game.names[currentQuestion].answer.includes(playerAnswer)) {
+                isAnswerCorrect(game.names[currentQuestion].points)
+            } else {
+                isAnswerWrong()
+            }
+        };
         if (currentCategory.contains("deaths")) {
-            if(game.deaths[currentQuestion].answer.includes(playerAnswer)){
-                isAnswerCorrect()
-        } else {
-            isAnswerWrong()
-        }};
+            if (game.deaths[currentQuestion].answer.includes(playerAnswer)) {
+                isAnswerCorrect(game.deaths[currentQuestion].points)
+            } else {
+                isAnswerWrong()
+            }
+        };
         if (currentCategory.contains("houses")) {
-            if(game.houses[currentQuestion].answer.includes(playerAnswer)){
-                isAnswerCorrect()
-        } else {
-            isAnswerWrong()
-        }};
+            if (game.houses[currentQuestion].answer.includes(playerAnswer)) {
+                isAnswerCorrect(game.houses[currentQuestion].points)
+            } else {
+                isAnswerWrong()
+            }
+        };
         if (currentCategory.contains("images")) {
-            if(game.images[currentQuestion].answer.includes(playerAnswer)){
-                isAnswerCorrect()
-        } else {
-            isAnswerWrong()
-        }};
+            if (game.images[currentQuestion].answer.includes(playerAnswer)) {
+                isAnswerCorrect(game.images[currentQuestion].points)
+            } else {
+                isAnswerWrong()
+            }
+        };
         if (currentCategory.contains("castles")) {
-            if(game.castles[currentQuestion].answer.includes(playerAnswer)){
-                isAnswerCorrect()
-        } else {
-            isAnswerWrong()
-        }};
+            if (game.castles[currentQuestion].answer.includes(playerAnswer)) {
+                isAnswerCorrect(game.castles[currentQuestion].points)
+            } else {
+                isAnswerWrong()
+            }
+        };
         setTimeout(renderBoard, 2000);
     }
 
@@ -226,17 +259,17 @@ $(document).ready(function () {
         $("#player-answer").val("");
     }
 
-    // function to do stuff is answer is correct
-    function isAnswerCorrect(){
+    function isAnswerCorrect(category) {
         console.log("nice job");
-        // currentPoints += game.deaths[currentQuestion].points;
-        // 
+        currentPoints += category;
+        console.log(currentPoints);
+        $playerPoints.html(currentPoints);
     }
-    
+
     // function to do stuff if answer is incorrect
-    function isAnswerWrong(){
+    function isAnswerWrong() {
         console.log("whoopsies")
     }
-    
+
     initGame();
 })
