@@ -109,6 +109,10 @@ body {
     position: relative;
 }
 
+.loser {
+    display: none
+}
+
 .card-click h5 {
     font-size: 30px;
 }

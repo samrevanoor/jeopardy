@@ -6,7 +6,7 @@ $(document).ready(function () {
     const $gamePage = $(".post-splash");
     let $playerName = $("#player-name").val();
     const $cardClick = $(".card-click");
-    const $cardQuestion = $(".card-body h5");
+    const $cardQuestion = $(".card-second-body h5");
     let $playerPoints = $(".current-points");
 
     let playerAnswer = "";
@@ -191,10 +191,10 @@ $(document).ready(function () {
                     margin: "75px"
                 });
         };
-        $("audio")[0].play();
-        $("audio").prop("volume", 0.3);
+        $(".theme")[0].play();
+        $(".theme").prop("volume", 0.3);
         startTimer();
-        setTimeout(checkAnswer, 30000)
+        setTimeout(checkAnswer, 30000);
     }
 
     function answeredQuestion(evt) {
@@ -262,9 +262,15 @@ $(document).ready(function () {
                 isAnswerWrong()
             }
         };
-        $("audio")[0].pause();
+        $(".theme")[0].pause();
         setTimeout(renderBoard, 2000);
         setTimeout(confetti.stop, 2000);
+        setTimeout(function () {
+            $(".loser")
+            .css({
+                display: "none",
+            })
+        }, 2000);
     }
 
     function startTimer() {
@@ -291,7 +297,6 @@ $(document).ready(function () {
 
     function isAnswerCorrect(category) {
         currentPoints += category;
-        console.log(currentPoints);
         $playerPoints.html(currentPoints);
         confetti.start();
         $("#submit-answer").html("nice job!");
@@ -299,6 +304,15 @@ $(document).ready(function () {
 
     // function to do stuff if answer is incorrect
     function isAnswerWrong() {
+        $(".loser")
+            .css({
+                display: "inline",
+            });
+        $(".roar")[0].play();
+        $(".roar").prop("volume", 0.3);
+        setTimeout(function(){
+            $(".roar")[0].pause()
+        }, 2000);
     }
 
     initGame();
