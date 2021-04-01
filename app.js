@@ -4,7 +4,7 @@ $(document).ready(function () {
     const $background = $(".container");
     const $landingPage = $(".splash");
     const $gamePage = $(".post-splash");
-    const $playerName = $("#player-name").val();
+    let $playerName = $("#player-name").val();
     const $cardClick = $(".card-click");
     const $cardQuestion = $(".card-body h5");
     let $playerPoints = $(".current-points");
@@ -102,19 +102,26 @@ $(document).ready(function () {
     // event listeners
     $(".start-game").on("click", letTheGamesBegin)
 
+    $("#player-name").keypress(function (e) {
+        if (e.which == '13') {
+            letTheGamesBegin();
+        }
+    })
+
     $(".question").on("click", handleCardClick)
 
     $("#submit-answer").on("click", checkAnswer)
 
-    $("#player-answer").keypress(function(e){
-        if(e.which == '13'){
+    $("#player-answer").keypress(function (e) {
+        if (e.which == '13') {
             checkAnswer();
         }
     })
 
     // event handlers
     function letTheGamesBegin() {
-        if ($("#player-name").val() !== "") {
+        $playerName = $("#player-name").val();
+        if ($playerName !== "") {
             $landingPage
                 .css({
                     display: "none"
@@ -129,8 +136,10 @@ $(document).ready(function () {
                     backgroundImage: "none"
                 })
             $(".player-name")
-                .html($("#player-name").val().trim().toLowerCase())
-        } return;
+                .html($("#player-name").val().trim().toLowerCase());
+        }
+        $("#player-name").val("");
+        return;
     }
 
     function handleCardClick(evt) {
@@ -183,6 +192,9 @@ $(document).ready(function () {
                 });
         };
         $("audio")[0].play();
+        $("audio").prop("volume", 0.3);
+        startTimer();
+        setTimeout(checkAnswer, 30000)
     }
 
     function answeredQuestion(evt) {
@@ -206,7 +218,7 @@ $(document).ready(function () {
             console.log("uh oh try again");
         } else if (currentPoints < 200) {
             console.log("not bad! you can do better")
-        } else if (currentPoints < 300){
+        } else if (currentPoints < 300) {
             console.log("really good job!")
         } else {
             console.log("you really know your stuff!")
@@ -253,6 +265,15 @@ $(document).ready(function () {
         $("audio")[0].pause();
         setTimeout(renderBoard, 2000);
         setTimeout(confetti.stop, 2000);
+    }
+
+    function startTimer() {
+        let i = 30;
+        setInterval(function () {
+            $("#stopWatch").html(i);
+            i--;
+            return i;
+        }, 1000);
     }
 
     function renderBoard() {
