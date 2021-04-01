@@ -16,8 +16,6 @@ $(document).ready(function () {
     let secondsToAnswer = 29;
 
     let gameTimer;
-
-
     let isGameOver = false;
 
     const game = {
@@ -124,7 +122,7 @@ $(document).ready(function () {
 
     // event handlers
     function letTheGamesBegin() {
-        $playerName = $("#player-name").val();
+        $playerName = $("#player-name").val().trim();
         if ($playerName !== "") {
             $landingPage
                 .css({
@@ -198,7 +196,7 @@ $(document).ready(function () {
         $(".theme")[0].play();
         $(".theme").prop("volume", 0.3);
         startTimer();
-        setTimeout(checkAnswer, 30000);
+        // setTimeout(checkAnswer, 30000);
 
     }
 
@@ -268,13 +266,14 @@ $(document).ready(function () {
             }
         };
         $(".theme")[0].pause();
+        $(".theme")[0].currentTime = 0;
         setTimeout(renderBoard, 2000);
-        clearGameTimer()
+        clearGameTimer();
     }
 
     function clearGameTimer() {
-        secondsToAnswer = 30;
-        $("#stopWatch").html(secondsToAnswer);
+        secondsToAnswer = 29;
+        $("#stopWatch").html("30");
         clearInterval(gameTimer);
     }
 
@@ -299,39 +298,26 @@ $(document).ready(function () {
             })
         $("#player-answer").val("");
         $("#submit-answer").html("submit");
-
-        // toggleCardBody();
     }
 
     function isAnswerCorrect(category) {
         currentPoints += category;
         $playerPoints.html(currentPoints);
         confetti.start();
+        $(".cheer")[0].play();
         $("#submit-answer").html("nice job!");
-        setTimeout(confetti.stop, 2000);
-        // toggleCardBody();
+        setTimeout(correctCard, 2000);
     }
 
-    // function to do stuff if answer is incorrect
+    function correctCard(){
+        confetti.stop();
+        $(".cheer")[0].pause();
+        $(".cheer")[0].currentTime = 0;
+    }
+
     function isAnswerWrong() {
         wrongCard();
         setTimeout(reverseWrongCard, 2000);
-        // toggleCardBody();
-        // $(".roar")[0].play();
-        // $(".roar").prop("volume", 0.3);
-        // setTimeout(function () {
-        //     $(".roar")[0].pause()
-        // }, 2000);
-    }
-
-    function toggleCardBody() {
-        let $cardBody = $(".card-second-body");
-        $cardBody.toggle($(".card-second-body").css("display") === "none");
-        // if ($(".card-second-body").hasClass("hide")) {
-        //     $(".card-second-body").removeClass("hide")
-        // } else {
-        //     $(".card-second-body").addClass("hide")
-        // }
     }
 
     function wrongCard() {
@@ -343,6 +329,8 @@ $(document).ready(function () {
             .css({
                 display: "none",
             })
+        $(".roar")[0].play();
+        $(".roar").prop("volume", 0.3);
     }
 
     function reverseWrongCard() {
@@ -354,6 +342,8 @@ $(document).ready(function () {
             .css({
                 display: "block",
             })
+        $(".roar")[0].pause();
+        $(".roar")[0].currentTime = 0;
     }
 
     initGame();
