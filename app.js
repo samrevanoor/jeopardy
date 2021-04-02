@@ -7,6 +7,7 @@ $(document).ready(function () {
     let $playerName = $("#player-name").val();
     const $cardClick = $(".card-click");
     const $cardQuestion = $(".card-second-body h5");
+    const $endGamePage = $(".end-game");
     let $playerPoints = $(".current-points");
 
     let playerAnswer = "";
@@ -99,6 +100,10 @@ $(document).ready(function () {
             .css({
                 display: "none"
             })
+        $endGamePage
+            .css({
+                display: "none"
+            })
     }
 
     // event listeners
@@ -167,6 +172,23 @@ $(document).ready(function () {
             })
     }
 
+    function startTimer() {
+        gameTimer = setInterval(function () {
+            $("#stopWatch").html(secondsToAnswer);
+            secondsToAnswer--;
+            if (secondsToAnswer === -2) {
+                clearGameTimer();
+                noAnswerGiven();
+            };
+        }, 1000);
+    }
+
+    function clearGameTimer() {
+        secondsToAnswer = 29;
+        $("#stopWatch").html("30");
+        clearInterval(gameTimer);
+    }
+
     function generateQuestion(currentQuestion, currentCategory) {
         if (currentCategory.contains("names")) {
             $cardQuestion.html(game.names[currentQuestion].question);
@@ -193,11 +215,26 @@ $(document).ready(function () {
                     margin: "75px"
                 });
         };
+        startTheme();
+        startTimer();
+    }
+
+    function startTheme() {
         $(".theme")[0].play();
         $(".theme").prop("volume", 0.3);
-        startTimer();
-        // setTimeout(checkAnswer, 30000);
+    }
 
+    function noAnswerGiven() {
+        $(".theme")[0].pause();
+        $(".trombone")[0].play();
+        $(".trombone").prop("volume", 0.3);
+        renderBoard();
+        setTimeout(reverseNoAnswerGiven, 4000);
+    }
+
+    function reverseNoAnswerGiven() {
+        $(".trombone")[0].pause();
+        $(".trombone")[0].currentTime = 0;
     }
 
     function answeredQuestion(evt) {
@@ -206,29 +243,34 @@ $(document).ready(function () {
     }
 
     function checkGameStatus() {
-        if (Array.from($(".question")).every(el => $(el).hasClass("disabled"))) {
+        if (Array.from($(".question")).some(el => $(el).hasClass("disabled"))) {
             isGameOver = true;
-            endGame();
-            return true;
         } else {
             isGameOver = false;
-            return false;
         }
     }
 
     function endGame() {
+        $endGamePage
+        .css({
+            display: "grid"
+        })
+        $gamePage
+            .css({
+            display: "none"
+        });
         if (currentPoints < 150) {
-            console.log("uh oh try again");
+            $(".end-game-result").html("Is that really the best you can do?");
         } else if (currentPoints < 200) {
-            console.log("not bad! you can do better")
+            $(".end-game-result").html("Not bad! But we think you can do better ...")
         } else if (currentPoints < 300) {
-            console.log("really good job!")
+            $(".end-game-result").html("Nice work!")
         } else {
-            console.log("you really know your stuff!")
+            $(".end-game-result").html("You have won the Game of Thrones!")
         };
     }
 
-    function checkAnswer(evt) {
+    function checkAnswer() {
         playerAnswer = $("#player-answer").val().trim().toLowerCase();
         if (currentCategory.contains("names")) {
             if (game.names[currentQuestion].answer.includes(playerAnswer)) {
@@ -265,26 +307,6 @@ $(document).ready(function () {
                 isAnswerWrong()
             }
         };
-        $(".theme")[0].pause();
-        $(".theme")[0].currentTime = 0;
-        setTimeout(renderBoard, 2000);
-        clearGameTimer();
-    }
-
-    function clearGameTimer() {
-        secondsToAnswer = 29;
-        $("#stopWatch").html("30");
-        clearInterval(gameTimer);
-    }
-
-    function startTimer() {
-        gameTimer = setInterval(function () {
-            $("#stopWatch").html(secondsToAnswer);
-            secondsToAnswer--;
-            if (secondsToAnswer === 0) {
-                clearGameTimer();
-            };
-        }, 1000);
     }
 
     function renderBoard() {
@@ -298,21 +320,31 @@ $(document).ready(function () {
             })
         $("#player-answer").val("");
         $("#submit-answer").html("submit");
+        $buttonClicked = false;
+        $(".theme")[0].currentTime = 0;
+        clearGameTimer();
+        if (isGameOver === true) {
+            endGame();
+        }
     }
 
     function isAnswerCorrect(category) {
         currentPoints += category;
         $playerPoints.html(currentPoints);
         confetti.start();
+        $(".theme")[0].pause();
         $(".cheer")[0].play();
         $("#submit-answer").html("nice job!");
+        $("#submit-answer").addClass("disabled");
         setTimeout(correctCard, 2000);
     }
 
-    function correctCard(){
+    function correctCard() {
         confetti.stop();
         $(".cheer")[0].pause();
         $(".cheer")[0].currentTime = 0;
+        $("#submit-answer").removeClass("disabled");
+        renderBoard();
     }
 
     function isAnswerWrong() {
@@ -329,6 +361,7 @@ $(document).ready(function () {
             .css({
                 display: "none",
             })
+        $(".theme")[0].pause();
         $(".roar")[0].play();
         $(".roar").prop("volume", 0.3);
     }
@@ -344,6 +377,7 @@ $(document).ready(function () {
             })
         $(".roar")[0].pause();
         $(".roar")[0].currentTime = 0;
+        renderBoard();
     }
 
     initGame();

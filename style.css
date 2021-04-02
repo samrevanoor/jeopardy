@@ -143,6 +143,27 @@ body {
     background-image: none;
 }
 
+.disabled.question {
+
+}
+
 .hide {
     display: none;
+}
+
+.end-game {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px;
+    margin: 100px;
+    color: white;
+}
+
+.end-game button {
+    margin: 10px auto;
+    padding: 8px 20px 8px 20px;
+    background-color: rgba(255,155,89,255);
+    border-radius: 20px;
 }
