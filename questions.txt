@@ -1,55 +1,137 @@
+BRAINSTORMING QUESTIONS FOR HARD ROUND
 // names
-Q4: The Hound's real name is ...
-A4: sandor/sandor clegane
+Q: The Hound's real name is ...
+A: sandor/sandor clegane
 points: 10
 
-Q1. Daenerys' dragons were named Drogon, Viserion and ...
-A1: rhaegal
+Q. Daenerys' dragons were named Drogon, Viserion and ...
+A: rhaegal
 points: 20
 
-Q3: Olenna Tyrell is also known as ...
-A3: the queen of thorns/queen of thorns
+Q: Olenna Tyrell is also known as ...
+A: the queen of thorns/queen of thorns
 points: 30
 
 // deaths
-Q5: Arya Stark cooked ___'s children and fed them to him.
-A5: walder frey/lord frey/frey
+Q: Arya Stark cooked ___'s children and fed them to him.
+A: walder frey/lord frey/frey
 points: 10
 
-Q9: This man's skull was crushed by the Mountain.
-A9: oberyn martell/prince martell/oberyn
+Q: This man's skull was crushed by the Mountain.
+A: oberyn martell/prince martell/oberyn
 points: 20
 
-Q7: Lysa Arryn died by being pushed through the ___
-A7: moon door/moondoor
+Q: Lysa Arryn died by being pushed through the ___
+A: moon door/moondoor
 points: 30
 
 //houses
-Q11: Which house has a stag as its sigil?
-A11: baratheon
+Q: Which house has a stag as its sigil?
+A: baratheon
 points: 10
 
-Q6: Jon Snow is half Stark and half ____
-A6: targaryen
+Q: Jon Snow is half Stark and half ____
+A: targaryen
 points: 20
 
-Q10: What is House Lannister's official saying?
-A10: hear me roar/hear me roar!
+Q: What is House Lannister's official saying?
+A: hear me roar/hear me roar!
 points: 30
 
-//other
-Q2: Which hand did Jaime Lannister lose?
-A2: right
+//images
+Q: picture of pod
+A: pod
 points: 10
 
-Q8: Jaqen H'ghar helped Arya and her friends escape from ___
-A8: harrenhal/harren hal/harrenhall/harren hall 
+Q: picture of shireen
+A: shireen
 points: 20
 
-Q12: Which wildling has a BIG crush on Brienne?
-A12: tormund giantsbane
+Q: picture of tormund
+A: tormund
 points: 30
 
+// castles
+Q: picture of dragonstone
+A: dragonstone
+points: 10
+
+Q: picture of castle black
+A: castle black
+points: 20
+
+Q: Jaqen H'ghar helped Arya and her friends escape from ___
+A: harrenhal/harren hal/harrenhall/harren hall 
+points: 30
+
+EASY ROUND
+
+// names
+Q: The Hound's real name is ...
+A: sandor/sandor clegane
+points: 10
+
+Q. Daenerys' dragons were named Drogon, Viserion and ...
+A: rhaegal
+points: 20
+
+Q: Olenna Tyrell is also known as ...
+A: the queen of thorns/queen of thorns
+points: 30
+
+// deaths
+Q: Arya Stark cooked ___'s children and fed them to him.
+A: walder frey/lord frey/frey
+points: 10
+
+Q: This man's skull was crushed by the Mountain.
+A: oberyn martell/prince martell/oberyn
+points: 20
+
+Q: Lysa Arryn died by being pushed through the ___
+A: moon door/moondoor
+points: 30
+
+//houses
+Q: Which house has a stag as its sigil?
+A: baratheon
+points: 10
+
+Q: Jon Snow is half Stark and half ____
+A: targaryen
+points: 20
+
+Q: What is House Lannister's official saying?
+A: hear me roar/hear me roar!
+points: 30
+
+//images
+Q: picture of pod
+A: pod
+points: 10
+
+Q: picture of shireen
+A: shireen
+points: 20
+
+Q: picture of tormund
+A: tormund
+points: 30
+
+// castles
+Q: picture of dragonstone
+A: dragonstone
+points: 10
+
+Q: picture of castle black
+A: castle black
+points: 20
+
+Q: Jaqen H'ghar helped Arya and her friends escape from ___
+A: harrenhal/harren hal/harrenhall/harren hall 
+points: 30
+
+jamie's hand
 
 // pseudocode
 /* GAME OF THRONES THEMED JEOPARDY GAME
