@@ -29,8 +29,8 @@
     <div class="splash">
         <h1>WELCOME TO GAME OF THRONES JEOPARDY!</h1>
         <br><br>
-        <h3 class="level">choose your level: <button id="easy">easy</button>&nbsp;<button id="hard">hard</button></h3>
-        <h3>and enter your name to start the game:</h3>
+        <h3 class="level">choose your level: <button id="easy">easy</button>&nbsp;<button id="hard">hard</button>&nbsp;<button id="super-hard">super hard</button></h3></h3>
+        <h3 class="name">and enter your name to start the game:</h3>
         <input type="text" id="player-name">
         <button class="start-game">start</button>
     </div>
@@ -117,12 +117,15 @@
         <!-- game updates -->
         <div>
             <h3 class="instruction">make a selection to play</h3>
-            <p>remember: spelling counts so be careful!</p>
-            <br>
-            <h3>player name: <span class="player-name"></span>
-                <span class="level">level: <span id="player-level"></span></span>
-            </h3>
-            <h3>total points: <span class="current-points">0</span></h3>
+            <p>remember: spelling (kinda) counts so be careful!</p>
+            <div class="footer">
+                <h3>player name: <span class="player-name"></span>
+                    <span class="level">level: <span id="player-level"></span></span>
+                </h3>
+                <h3>total points: <span class="current-points">0</span>
+                    <span><button class="reset-game" id="reset">reset game</button></span>
+                </h3>
+            </div>
         </div>
     </div>
     <div class="card-click">
@@ -158,7 +161,7 @@
         <h1>You scored <span class="current-points"></span> points, <span class="player-name"></span>!</h1>
         <br><br>
         <h3><span class="end-game-result"></span></h3>
-        <button id="reset-game">play again</button>
+        <button class="reset-game">play again</button>
     </div>
     <h4 id="signature">by sam revanoor</h4>
 </body>

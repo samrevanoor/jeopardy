@@ -1,4 +1,6 @@
-BRAINSTORMING QUESTIONS FOR HARD ROUND
+BRAINSTORMING QUESTIONS 
+
+HARD ROUND
 // names
 Q: The Hound's real name is ...
 A: sandor/sandor clegane
@@ -129,6 +131,72 @@ points: 20
 
 Q: What is the wedding of Edmure & Roslin Tully commonly called? [picture of wedding]
 A: the red wedding/red wedding
+points: 30
+
+// ULTRA HARD
+// names
+Q: Sansa Stark's first husband is ...
+A: tyrion/tyrion lannister
+points: 10
+
+Q: What is Jon Snow's birth name?
+A: Aegon Targaryen
+points: 20
+
+Q. What is Daenerys Targaryen's alternate last name?
+A: stormborn
+points: 30
+
+// deaths
+Q: This Lord Commander of the Night's Watch was killed at Craster's Keep.
+A: mormont/ser mormont/jeor mormont/ser jeor mormont
+points: 10
+
+Q: This Hand of the King was killed by his son while on the toilet.
+A: tywin lannister/tywin/lord tywin
+points: 20
+
+Q: This man was chased down and killed by his own hounds.
+A: ramsay/ramsay snow/ramsay bolton
+points: 30
+
+//houses
+Q: Which house is Ser Brienne from?
+A: tarth/house tarth
+points: 10
+
+Q: This house's sigil is a red sun pierced by a golden spear on an orange field.
+A: martell/house martell
+points: 20
+
+Q: Where is Lady Talisa originally from? 
+A: volantis
+points: 30
+
+//images
+Q: picture of hot pie
+A: hot pie/hotpie
+points: 10
+
+Q: picture of lyanna
+A: lyanna mormont/lyanna
+points: 20
+
+Q: picture of daario
+A: daario/daario naharis
+points: 30
+
+// other
+Q: Rickon Stark's direwolf was called ... [gif of direwolf]
+A: shaggydog/shaggy dog
+points: 10
+
+Q: Where is this? [pic of braavos]
+A: braavos
+points: 20
+
+Q: Widow's Wail and Oathkeeper were forged from this ancestral sword of House Stark.
+A: ice
 points: 30
 
 // pseudocode

@@ -8,7 +8,7 @@ $(document).ready(function () {
     const $cardClick = $(".card-click");
     const $cardQuestion = $(".card-second-body h5");
     const $endGamePage = $(".end-game");
-    const $resetGame = $("#reset-game")
+    const $resetGame = $(".reset-game")
     let $playerPoints = $(".current-points");
 
     let playerAnswer = "";
@@ -157,6 +157,74 @@ $(document).ready(function () {
         }]
     }
 
+    const levelSuperHard = {
+        names: [{
+            question: "Sansa Stark's first husband is ...",
+            answer: ["tyrion", "tyrion lannister"],
+            points: 10
+        }, {
+            question: "What is Jon Snow's birth name?",
+            answer: ["aegon targaryen", "aegon"],
+            points: 20
+        }, {
+            question: "What is Daenerys Targaryen's alternate last name?",
+            answer: ["stormborn", "storm born"],
+            points: 30
+        }],
+        deaths: [{
+            question: "This Lord Commander of the Night's Watch was killed at Craster's Keep.",
+            answer: ["mormont", "ser mormont", "jeor mormont", "ser jeor mormont"],
+            points: 10
+        }, {
+            question: "This Hand of the King was killed by his son while on the toilet.",
+            answer: ["tywin lannister", "tywin", "lord tywin"],
+            points: 20
+        }, {
+            question: "This man was chased down and killed by his own hounds.",
+            answer: ["ramsay", "ramsay snow", "ramsay bolton"],
+            points: 30
+        }],
+        houses: [{
+            question: "Which house is Ser Brienne from?",
+            answer: ["house tarth", "tarth"],
+            points: 10
+        }, {
+            question: "This house's sigil is a red sun pierced by a golden spear on an orange field.",
+            answer: ["house martell", "martell"],
+            points: 20
+        }, {
+            question: "Where is Lady Talisa originally from?",
+            answer: ["volantis", "valantis"],
+            points: 30
+        }],
+        images: [{
+            question: '<h5>Who is this?</h5><img src="Images/hot-pie.gif">',
+            answer: ["hot pie", "hotpie"],
+            points: 10
+        }, {
+            question: '<h5>Who is this?</h5><img src="Images/lyanna.gif">',
+            answer: ["lyanna", "lyanna mormont", "lady mormont", "lady lyanna mormont"],
+            points: 20
+        }, {
+            question: '<h5>Who is this?</h5><img src="Images/daario.gif">',
+            answer: ["daario", "dario", "daario naharis", "dario naharis"],
+            points: 30
+        }],
+        other: [{
+            question: '<h5>Where is this?</h5><img src="Images/braavos.png">',
+            answer: ["braavos"],
+            points: 10
+        }, {
+            question: "<h5>Rickon Stark's direwolf was called ...</h5><img src='Images/shaggydog.gif'>",
+            answer: ["shaggydog", "shaggy dog"],
+            points: 20
+        }, {
+            question: "<h5>Widow's Wail and Oathkeeper were forged from this ancestral sword of House Stark.</h5><img src='Images/ice.gif'>",
+            answer: ["ice"],
+            points: 30
+        }]
+    }
+
     function initGame() {
         $landingPage
             .css({
@@ -182,14 +250,34 @@ $(document).ready(function () {
             .css({
                 display: "none"
             })
+        $("#easy")
+            .css({
+                backgroundColor: "#ff9b59",
+                opacity: "1"
+            })
+        $("#hard")
+            .css({
+                backgroundColor: "#ff9b59",
+                opacity: "1"
+            })
+        $("#super-hard")
+            .css({
+                backgroundColor: "#ff9b59",
+                opacity: "1"
+            })
         currentPoints = 0;
         $playerPoints.html(currentPoints);
-        $(".question").removeClass("disabled")
+        $(".question").removeClass("disabled");
+        gameLevel = "";
     }
 
     // event listeners
     $("#easy").on("click", function () {
         $("#hard")
+            .css({
+                opacity: "0.5"
+            })
+        $("#super-hard")
             .css({
                 opacity: "0.5"
             })
@@ -199,11 +287,14 @@ $(document).ready(function () {
                 opacity: "1"
             })
         gameLevel = "easy";
-        clearInterval(blinkTextVar);
     })
 
     $("#hard").on("click", function () {
         $("#easy")
+            .css({
+                opacity: "0.5"
+            })
+        $("#super-hard")
             .css({
                 opacity: "0.5"
             })
@@ -213,7 +304,23 @@ $(document).ready(function () {
                 opacity: "1"
             })
         gameLevel = "hard";
-        clearInterval(blinkTextVar);
+    })
+
+    $("#super-hard").on("click", function () {
+        $("#easy")
+            .css({
+                opacity: "0.5"
+            })
+        $("#hard")
+            .css({
+                opacity: "0.5"
+            })
+        $("#super-hard")
+            .css({
+                backgroundColor: "#ff9b59",
+                opacity: "1"
+            })
+        gameLevel = "super-hard";
     })
 
     $(".start-game").on("click", letTheGamesBegin)
@@ -234,35 +341,30 @@ $(document).ready(function () {
         }
     })
 
-    $("#reset-game").on("click", initGame);
+    $resetGame.on("click", initGame);
 
     // event handlers
     function letTheGamesBegin() {
+        $playerName = $("#player-name").val().trim();
         if (!gameLevel) {
-            blinkTextVar;
+            blinkText($(".level"));
+        } else if ($playerName === "") {
+            blinkText($(".name"));
+            blinkText($("#player-name"));
         } else {
-            $playerName = $("#player-name").val().trim();
-            if ($playerName !== "") {
-                $landingPage
-                    .css({
-                        display: "none"
-                    });
-                $gamePage
-                    .css({
-                        display: "block"
-                    });
-                $("body")
-                    .css({
-                        backgroundColor: "navy",
-                        backgroundImage: "none"
-                    })
-                $("#signature")
-                    .css({
-                        display: "none",
-                    })
-                $(".player-name")
-                    .html($("#player-name").val().trim().toLowerCase());
-            }
+            $landingPage.fadeOut(1000)
+            $gamePage.fadeIn(4000)
+            $("body")
+                .css({
+                    backgroundColor: "navy",
+                    backgroundImage: "none"
+                })
+            $("#signature")
+                .css({
+                    display: "none",
+                })
+            $(".player-name")
+                .html($("#player-name").val().trim().toLowerCase());
             $("#player-name").val("");
             whichLevel();
             $("#player-level").html(gameLevel);
@@ -270,19 +372,18 @@ $(document).ready(function () {
         }
     }
 
-    function blinkText() {
-        $(".level").fadeOut(600);
-        $(".level").fadeIn(600);
+    function blinkText(sel) {
+        sel.fadeOut(600);
+        sel.fadeIn(600);
     }
-
-    const blinkTextVar = setInterval(blinkText, 1200);
-
 
     function whichLevel() {
         if (gameLevel === "easy") {
             game = levelEasy;
         } else if (gameLevel === "hard") {
             game = levelHard;
+        } else if (gameLevel === "super-hard") {
+            game = levelSuperHard;
         }
     }
 
@@ -404,7 +505,7 @@ $(document).ready(function () {
         } else if (currentPoints < 200) {
             $(".end-game-result").html("Not bad! But we think you can do better ...")
         } else if (currentPoints < 300) {
-            $(".end-game-result").html("Amazing job! You're next in line for the throne!")
+            $(".end-game-result").html("Amazing job! You're next in line for the throne ...")
         } else {
             $(".end-game-result").html("Congratulations! You got a perfect score. <br> You have won the Game of Thrones!")
         };
