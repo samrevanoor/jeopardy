@@ -11,6 +11,13 @@ body {
     background-repeat: no-repeat; */
 }
 
+#signature {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    opacity: 0.5;
+    font-size: 20px;
+}
+
 .splash {
     display: grid;
     background-image: url("Images/background option 3.gif");
@@ -59,6 +66,10 @@ body {
     margin-bottom: 0;
 }
 
+.jumbotron h1 {
+    margin-bottom: 0;
+}
+
 .categories button {
     cursor: initial;
     letter-spacing: 2px;
@@ -76,6 +87,7 @@ body {
     align-items: center;
     background-color: rgb(34, 34, 143);
     padding: 0 50px 50px 50px;
+    margin-top: 0;
 }
 
 .post-splash button {
@@ -170,4 +182,8 @@ body {
 
 .container p {
     text-align: center;
+}
+
+.level {
+    float: right;
 }

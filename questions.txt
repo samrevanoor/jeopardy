@@ -51,7 +51,7 @@ Q: picture of tormund
 A: tormund
 points: 30
 
-// castles
+// other
 Q: picture of dragonstone
 A: dragonstone
 points: 10
@@ -67,71 +67,69 @@ points: 30
 EASY ROUND
 
 // names
-Q: The Hound's real name is ...
-A: sandor/sandor clegane
+Q: Cersei's children are named Joffrey, Myrcella and ...
+A: tommen/tommen baratheon/tommen lannister
 points: 10
 
-Q. Daenerys' dragons were named Drogon, Viserion and ...
-A: rhaegal
+Q. He is also known as the Spider or the Master of Whisperers.
+A: varys
 points: 20
 
-Q: Olenna Tyrell is also known as ...
-A: the queen of thorns/queen of thorns
+Q: This blacksmith was the illegitimate son of King Robert, born and raised in Flea Bottom.
+A: gendry/gendry baratheon
 points: 30
 
 // deaths
-Q: Arya Stark cooked ___'s children and fed them to him.
-A: walder frey/lord frey/frey
+Q: This "dancing master" was killed by Meryn Trant.
+A: syrio forel/syrio
 points: 10
 
-Q: This man's skull was crushed by the Mountain.
-A: oberyn martell/prince martell/oberyn
+Q: This Northerner was beheaded by King Joffrey at the end of season one.
+A: ned/ned stark/eddard stark/eddard
 points: 20
 
-Q: Lysa Arryn died by being pushed through the ___
-A: moon door/moondoor
+Q: The name of Sansa Stark's direwolf, who was sentenced to death by King Robert.
+A: lady/lady stark
 points: 30
 
 //houses
-Q: Which house has a stag as its sigil?
-A: baratheon
+Q: The Rains of Castamere is associated with this house.
+A: house lannister/lannister
 points: 10
 
-Q: Jon Snow is half Stark and half ____
-A: targaryen
+Q: This house's motto is "Growing Strong"
+A: tyrell/house tyrell
 points: 20
 
-Q: What is House Lannister's official saying?
-A: hear me roar/hear me roar!
+Q: This house rules over the Iron Islands.
+A: house greyjoy/greyjoy
 points: 30
 
 //images
-Q: picture of pod
-A: pod
+Q: picture of drogo
+A: drogo/khal drogo
 points: 10
 
-Q: picture of shireen
-A: shireen
+Q: picture of littlefinger
+A: littlefinger/petyr baelish/lord baelish
 points: 20
 
-Q: picture of tormund
-A: tormund
+Q: picture of ros or margaery
+A: ros/margaery
 points: 30
 
-// castles
-Q: picture of dragonstone
-A: dragonstone
+// other
+Q: which hand did this man lose? [picture of jaime]
+A: right
 points: 10
 
-Q: picture of castle black
-A: castle black
+Q: Tyrion used wildfire at the Battle of ... [picture of wildfire]
+A: blackwater/black water/blackwater bay/black water bay
 points: 20
 
-Q: Jaqen H'ghar helped Arya and her friends escape from ___
-A: harrenhal/harren hal/harrenhall/harren hall 
+Q: 
+A: 
 points: 30
-
-jamie's hand
 
 // pseudocode
 /* GAME OF THRONES THEMED JEOPARDY GAME
@@ -157,10 +155,7 @@ a countdown begins for 60 seconds, and the player must answer the question shown
 once they type in their answer and hit submit, 
 the answer gets checked with the answer I've given the game
 
-if they get it right (with no spelling variation), they get the points
-if they get it right (with a spelling variation), they get 2 points less than the total
-
-the game board comes back into focus, with the already-played cards marked as a RIGHT or WRONG,
+the game board comes back into focus, with the already-played cards marked as COMPLETED,
 and the points get updated
 
 player clicks again, game continues

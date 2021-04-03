@@ -58,7 +58,7 @@
                     <button>IMAGES</button>
                 </div>
                 <div class="col">
-                    <button>CASTLES</button>
+                    <button>OTHER</button>
                 </div>
             </div>
             <div class="row questions">
@@ -75,7 +75,7 @@
                     <button class="question images" data-index-number="0">10</button>
                 </div>
                 <div class="col">
-                    <button class="question castles" data-index-number="0">10</button>
+                    <button class="question other" data-index-number="0">10</button>
                 </div>
             </div>
             <div class="row questions">
@@ -92,7 +92,7 @@
                     <button class="question images" data-index-number="1">20</button>
                 </div>
                 <div class="col">
-                    <button class="question castles" data-index-number="1">20</button>
+                    <button class="question other" data-index-number="1">20</button>
                 </div>
             </div>
             <div class="row questions">
@@ -109,7 +109,7 @@
                     <button class="question images" data-index-number="2">30</button>
                 </div>
                 <div class="col">
-                    <button class="question castles" data-index-number="2">30</button>
+                    <button class="question other" data-index-number="2">30</button>
                 </div>
             </div>
         </div>
@@ -118,7 +118,9 @@
             <h3 class="instruction">make a selection to play</h3>
             <p>remember: spelling counts so be careful!</p>
             <br>
-            <h3>player name: <span class="player-name"></span></h3>
+            <h3>player name: <span class="player-name"></span>
+                <span class="level">level: <span id="player-level"></span></span>
+            </h3>
             <h3>total points: <span class="current-points">0</span></h3>
         </div>
     </div>
@@ -152,11 +154,12 @@
         </audio>
     </div>
     <div class="end-game">
-        <h1>You scored <span class="current-points"></span> points!</h1>
+        <h1>You scored <span class="current-points"></span> points, <span class="player-name"></span>!</h1>
         <br><br>
         <h3><span class="end-game-result"></span></h3>
         <button id="reset-game">play again</button>
     </div>
+    <h4 id="signature">by sam revanoor</h4>
 </body>
 
 </html>

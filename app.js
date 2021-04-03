@@ -73,7 +73,7 @@ $(document).ready(function () {
             answer: ["tormund giantsbane", "tormund", "tormund giants bane", "tormund giantbane"],
             points: 30
         }],
-        castles: [{
+        other: [{
             question: '<h5>Which castle is this?</h5><img src="Images/castle1.jpeg">',
             answer: ["dragonstone", "dragon stone"],
             points: 10
@@ -95,7 +95,11 @@ $(document).ready(function () {
             })
         $("body")
             .css({
-                backgroundColor: "rgba(72,166,176,255)"
+                backgroundColor: "rgba(72,166,176,255)",
+            })
+        $("#signature")
+            .css({
+                display: "block"
             })
         $gamePage
             .css({
@@ -151,6 +155,10 @@ $(document).ready(function () {
                 .css({
                     backgroundColor: "navy",
                     backgroundImage: "none"
+                })
+            $("#signature")
+                .css({
+                    display: "none",
                 })
             $(".player-name")
                 .html($("#player-name").val().trim().toLowerCase());
@@ -217,8 +225,8 @@ $(document).ready(function () {
                     margin: "75px"
                 });
         };
-        if (currentCategory.contains("castles")) {
-            $cardQuestion.html(game.castles[currentQuestion].question);
+        if (currentCategory.contains("other")) {
+            $cardQuestion.html(game.other[currentQuestion].question);
             $cardClick
                 .css({
                     padding: "5px 10px 5px 10px",
@@ -262,14 +270,14 @@ $(document).ready(function () {
 
     function endGame() {
         $endGamePage
-        .css({
-            display: "grid"
-        })
+            .css({
+                display: "grid"
+            })
         $gamePage
             .css({
-            display: "none"
-        });
-        if (currentPoints === 0){
+                display: "none"
+            });
+        if (currentPoints === 0) {
             $playerPoints.html(currentPoints);
         };
         if (currentPoints < 150) {
@@ -313,9 +321,9 @@ $(document).ready(function () {
                 isAnswerWrong()
             }
         };
-        if (currentCategory.contains("castles")) {
-            if (game.castles[currentQuestion].answer.includes(playerAnswer)) {
-                isAnswerCorrect(game.castles[currentQuestion].points)
+        if (currentCategory.contains("other")) {
+            if (game.other[currentQuestion].answer.includes(playerAnswer)) {
+                isAnswerCorrect(game.other[currentQuestion].points)
             } else {
                 isAnswerWrong()
             }
