@@ -19,8 +19,9 @@ $(document).ready(function () {
 
     let gameTimer;
     let isGameOver = false;
+    let gameLevel;
 
-    const game = {
+    const levelEasy = {
         names: [{
             question: "Cersei's children are named Joffrey, Myrcella and ...",
             answer: ["tommen", "tommen baratheon", "tommen lannister", "tommin"],
@@ -88,7 +89,7 @@ $(document).ready(function () {
         }]
     }
 
-    const difficult = {
+    const levelHard = {
         names: [{
             question: "The Hound's real name is ...",
             answer: ["sandor", "sandor clegane"],
@@ -187,6 +188,34 @@ $(document).ready(function () {
     }
 
     // event listeners
+    $("#easy").on("click", function () {
+        $("#hard")
+            .css({
+                opacity: "0.5"
+            })
+        $("#easy")
+            .css({
+                backgroundColor: "#ff9b59",
+                opacity: "1"
+            })
+        gameLevel = "easy";
+        clearInterval(blinkTextVar);
+    })
+
+    $("#hard").on("click", function () {
+        $("#easy")
+            .css({
+                opacity: "0.5"
+            })
+        $("#hard")
+            .css({
+                backgroundColor: "#ff9b59",
+                opacity: "1"
+            })
+        gameLevel = "hard";
+        clearInterval(blinkTextVar);
+    })
+
     $(".start-game").on("click", letTheGamesBegin)
 
     $("#player-name").keypress(function (e) {
@@ -209,30 +238,52 @@ $(document).ready(function () {
 
     // event handlers
     function letTheGamesBegin() {
-        $playerName = $("#player-name").val().trim();
-        if ($playerName !== "") {
-            $landingPage
-                .css({
-                    display: "none"
-                });
-            $gamePage
-                .css({
-                    display: "block"
-                });
-            $("body")
-                .css({
-                    backgroundColor: "navy",
-                    backgroundImage: "none"
-                })
-            $("#signature")
-                .css({
-                    display: "none",
-                })
-            $(".player-name")
-                .html($("#player-name").val().trim().toLowerCase());
+        if (!gameLevel) {
+            blinkTextVar;
+        } else {
+            $playerName = $("#player-name").val().trim();
+            if ($playerName !== "") {
+                $landingPage
+                    .css({
+                        display: "none"
+                    });
+                $gamePage
+                    .css({
+                        display: "block"
+                    });
+                $("body")
+                    .css({
+                        backgroundColor: "navy",
+                        backgroundImage: "none"
+                    })
+                $("#signature")
+                    .css({
+                        display: "none",
+                    })
+                $(".player-name")
+                    .html($("#player-name").val().trim().toLowerCase());
+            }
+            $("#player-name").val("");
+            whichLevel();
+            $("#player-level").html(gameLevel);
+            return;
         }
-        $("#player-name").val("");
-        return;
+    }
+
+    function blinkText() {
+        $(".level").fadeOut(600);
+        $(".level").fadeIn(600);
+    }
+
+    const blinkTextVar = setInterval(blinkText, 1200);
+
+
+    function whichLevel() {
+        if (gameLevel === "easy") {
+            game = levelEasy;
+        } else if (gameLevel === "hard") {
+            game = levelHard;
+        }
     }
 
     function handleCardClick(evt) {

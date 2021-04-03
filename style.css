@@ -51,6 +51,15 @@ body {
     padding: 8px 20px 8px 20px;
     background-color: rgba(255,155,89,255);
     border-radius: 20px;
+    font-size: 20px;
+}
+
+.level button {
+    margin: 10px auto;
+    padding: 6px 10px 6px 10px;
+    background-color: rgba(255,155,89,255);
+    border-radius: 20px;
+    font-size: 18px;
 }
 
 .post-splash {
