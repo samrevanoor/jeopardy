@@ -8,6 +8,7 @@ $(document).ready(function () {
     const $cardClick = $(".card-click");
     const $cardQuestion = $(".card-second-body h5");
     const $endGamePage = $(".end-game");
+    const $resetGame = $("#reset-game")
     let $playerPoints = $(".current-points");
 
     let playerAnswer = "";
@@ -48,7 +49,7 @@ $(document).ready(function () {
         }],
         houses: [{
             question: "Which house has a stag as its sigil?",
-            answer: ["baratheon", "barathion", "bartheon"],
+            answer: ["baratheon", "barathion", "bartheon", "barratheon"],
             points: 10
         }, {
             question: "Jon Snow is half Stark and half ...",
@@ -88,9 +89,12 @@ $(document).ready(function () {
     }
 
     function initGame() {
+        // reset points
+        // reset class disabled
         $landingPage
             .css({
-                display: "grid"
+                display: "grid",
+                backgroundColor: "rgba(72,166,176,255)"
             })
         $gamePage
             .css({
@@ -124,6 +128,8 @@ $(document).ready(function () {
             checkAnswer();
         }
     })
+
+    $("#reset-game").on("click", initGame);
 
     // event handlers
     function letTheGamesBegin() {
@@ -243,7 +249,7 @@ $(document).ready(function () {
     }
 
     function checkGameStatus() {
-        if (Array.from($(".question")).some(el => $(el).hasClass("disabled"))) {
+        if (Array.from($(".question")).every(el => $(el).hasClass("disabled"))) {
             isGameOver = true;
         } else {
             isGameOver = false;
@@ -259,6 +265,9 @@ $(document).ready(function () {
             .css({
             display: "none"
         });
+        if (currentPoints === 0){
+            $playerPoints.html(currentPoints);
+        };
         if (currentPoints < 150) {
             $(".end-game-result").html("Is that really the best you can do?");
         } else if (currentPoints < 200) {
