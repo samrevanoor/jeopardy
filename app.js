@@ -12,7 +12,7 @@ $(document).ready(function () {
     let $playerPoints = $(".current-points");
 
     let playerAnswer = "";
-    let currentPoints = 0;
+    let currentPoints;
     let currentQuestion;
     let currentCategory;
     let secondsToAnswer = 29;
@@ -89,11 +89,12 @@ $(document).ready(function () {
     }
 
     function initGame() {
-        // reset points
-        // reset class disabled
         $landingPage
             .css({
-                display: "grid",
+                display: "grid"
+            })
+        $("body")
+            .css({
                 backgroundColor: "rgba(72,166,176,255)"
             })
         $gamePage
@@ -108,6 +109,9 @@ $(document).ready(function () {
             .css({
                 display: "none"
             })
+        currentPoints = 0;
+        $playerPoints.html(currentPoints);
+        $(".question").removeClass("disabled")
     }
 
     // event listeners
@@ -273,9 +277,9 @@ $(document).ready(function () {
         } else if (currentPoints < 200) {
             $(".end-game-result").html("Not bad! But we think you can do better ...")
         } else if (currentPoints < 300) {
-            $(".end-game-result").html("Nice work!")
+            $(".end-game-result").html("Amazing job! You're next in line for the throne!")
         } else {
-            $(".end-game-result").html("You have won the Game of Thrones!")
+            $(".end-game-result").html("Congratulations! You got a perfect score. <br> You have won the Game of Thrones!")
         };
     }
 
