@@ -119,7 +119,7 @@ A: ros/margaery
 points: 30
 
 // other
-Q: which hand did this man lose? [picture of jaime]
+Q: Which hand did this man lose? [picture of jaime]
 A: right
 points: 10
 
@@ -127,8 +127,8 @@ Q: Tyrion used wildfire at the Battle of ... [picture of wildfire]
 A: blackwater/black water/blackwater bay/black water bay
 points: 20
 
-Q: 
-A: 
+Q: What is the wedding of Edmure & Roslin Tully commonly called? [picture of wedding]
+A: the red wedding/red wedding
 points: 30
 
 // pseudocode

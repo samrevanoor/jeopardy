@@ -22,6 +22,74 @@ $(document).ready(function () {
 
     const game = {
         names: [{
+            question: "Cersei's children are named Joffrey, Myrcella and ...",
+            answer: ["tommen", "tommen baratheon", "tommen lannister", "tommin"],
+            points: 10
+        }, {
+            question: "He is also known as the 'Spider' or the 'Master of Whisperers'.",
+            answer: ["varys", "varis"],
+            points: 20
+        }, {
+            question: "This blacksmith was the illegitimate son of King Robert, born and raised in Flea Bottom.",
+            answer: ["gendry", "gendry baratheon"],
+            points: 30
+        }],
+        deaths: [{
+            question: "This 'dancing master' was killed by Meryn Trant.",
+            answer: ["syrio", "syrio forel"],
+            points: 10
+        }, {
+            question: "This Northerner was beheaded by King Joffrey at the end of season one.",
+            answer: ["ned", "ned stark", "eddard stark", "eddard"],
+            points: 20
+        }, {
+            question: "The name of Sansa Stark's direwolf, who was sentenced to death by King Robert.",
+            answer: ["lady", "lady stark"],
+            points: 30
+        }],
+        houses: [{
+            question: "The Rains of Castamere is associated with this house.",
+            answer: ["house lannister", "lannister"],
+            points: 10
+        }, {
+            question: "This house's motto is 'Growing Strong'",
+            answer: ["house tyrell", "tyrell"],
+            points: 20
+        }, {
+            question: "This house rules over the Iron Islands.",
+            answer: ["house greyjoy", "greyjoy"],
+            points: 30
+        }],
+        images: [{
+            question: '<h5>Who is this?</h5><img src="Images/missandei.gif">',
+            answer: ["missandei", "misandei", "missandei of narth"],
+            points: 10
+        }, {
+            question: '<h5>Who is this?</h5><img src="Images/littlefinger.gif">',
+            answer: ["littlefinger", "petyr baelish", "lord baelish", "petyr", "peter baelish"],
+            points: 20
+        }, {
+            question: '<h5>Who is this?</h5><img src="Images/margaery.gif">',
+            answer: ["margaery", "margaery tyrell", "margery"],
+            points: 30
+        }],
+        other: [{
+            question: '<h5>Which hand did this man lose?</h5><img src="Images/jaime.gif">',
+            answer: ["right"],
+            points: 10
+        }, {
+            question: "<h5>This man volunteers to be Tyrion's champion in the Eyrie.</h5><img src='Images/bronnimage2.gif'>",
+            answer: ["bronn", "ser bronn"],
+            points: 20
+        }, {
+            question: '<h5>What is the wedding of Edmure & Roslin Tully commonly called?</h5><img src="Images/red-wedding.png">',
+            answer: ["red wedding", "the red wedding"],
+            points: 30
+        }]
+    }
+
+    const difficult = {
+        names: [{
             question: "The Hound's real name is ...",
             answer: ["sandor", "sandor clegane"],
             points: 10

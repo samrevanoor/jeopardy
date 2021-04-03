@@ -32,6 +32,10 @@ body {
     color: white;
 }
 
+.splash h1 {
+    -webkit-text-stroke: 1px black;
+}
+
 .splash input {
     width: 200px;
     height: 50px;
