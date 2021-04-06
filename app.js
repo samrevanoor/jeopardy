@@ -483,7 +483,7 @@ $(document).ready(function () {
     }
 
     function checkGameStatus() {
-        if (Array.from($(".question")).some(el => $(el).hasClass("disabled"))) {
+        if (Array.from($(".question")).every(el => $(el).hasClass("disabled"))) {
             isGameOver = true;
         } else {
             isGameOver = false;
