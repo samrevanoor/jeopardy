@@ -11,7 +11,7 @@ $(document).ready(function () {
     const $resetGame = $(".reset-game")
     let $playerPoints = $(".current-points");
 
-    let playerAnswer = "";
+    let playerAnswer;
     let currentPoints;
     let currentQuestion;
     let currentCategory;
@@ -37,7 +37,7 @@ $(document).ready(function () {
         }],
         deaths: [{
             question: "This 'dancing master' was killed by Meryn Trant.",
-            answer: ["syrio", "syrio forel"],
+            answer: ["syrio", "syrio forel", "sirio", "cyrio"],
             points: 10
         }, {
             question: "This Northerner was beheaded by King Joffrey at the end of season one.",
@@ -67,7 +67,7 @@ $(document).ready(function () {
             points: 10
         }, {
             question: '<h5>Who is this?</h5><img src="Images/littlefinger.gif">',
-            answer: ["littlefinger", "petyr baelish", "lord baelish", "petyr", "peter baelish"],
+            answer: ["littlefinger", "petyr baelish", "lord baelish", "petyr", "peter baelish", "little finger"],
             points: 20
         }, {
             question: '<h5>Who is this?</h5><img src="Images/margaery.gif">',
@@ -80,7 +80,7 @@ $(document).ready(function () {
             points: 10
         }, {
             question: "<h5>This man volunteers to be Tyrion's champion in the Eyrie.</h5><img src='Images/bronnimage2.gif'>",
-            answer: ["bronn", "ser bronn"],
+            answer: ["bronn", "ser bronn", "bron"],
             points: 20
         }, {
             question: '<h5>What is the wedding of Edmure & Roslin Tully commonly called?</h5><img src="Images/red-wedding.png">',
@@ -173,7 +173,7 @@ $(document).ready(function () {
         }],
         deaths: [{
             question: "This Lord Commander of the Night's Watch was killed at Craster's Keep.",
-            answer: ["mormont", "ser mormont", "jeor mormont", "ser jeor mormont"],
+            answer: ["mormont", "ser mormont", "jeor mormont", "ser jeor mormont", "lord mormont"],
             points: 10
         }, {
             question: "This Hand of the King was killed by his son while on the toilet.",
@@ -269,6 +269,7 @@ $(document).ready(function () {
         $playerPoints.html(currentPoints);
         $(".question").removeClass("disabled");
         gameLevel = "";
+        playerAnswer = "";
     }
 
     // event listeners
@@ -353,8 +354,9 @@ $(document).ready(function () {
             blinkText($("#player-name"));
         } else {
             $landingPage.fadeOut(1000)
-            $gamePage.fadeIn(4000)
+            $gamePage.fadeIn(5000)
             $("body")
+                .fadeIn(4000)
                 .css({
                     backgroundColor: "navy",
                     backgroundImage: "none"
@@ -481,7 +483,7 @@ $(document).ready(function () {
     }
 
     function checkGameStatus() {
-        if (Array.from($(".question")).every(el => $(el).hasClass("disabled"))) {
+        if (Array.from($(".question")).some(el => $(el).hasClass("disabled"))) {
             isGameOver = true;
         } else {
             isGameOver = false;
