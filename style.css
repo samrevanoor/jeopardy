@@ -403,10 +403,10 @@ body {
 
 @media only screen and (max-width: 400px) {
     img {
-        width: 150px;
+        width: 80px;
     }
 
     .loser {
-        width: 150px;
+        width: 80px;
     }
 }
