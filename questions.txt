@@ -323,8 +323,9 @@ for all three options, offer a chance to play again using a button
 if "play again" button is clicked, function initGame
 */
 
-today i finished my basic game, finetuned the little details as much as I could,
-added 2 new levels,
-working on a 4th level
-
 up next: readme
+purpose of the game
+how to play the game
+technologies used
+something youre proud of
+next steps
