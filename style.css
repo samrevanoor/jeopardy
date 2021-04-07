@@ -142,7 +142,7 @@ body {
 }
 
 .footer {
-    margin-top: 0px;
+    margin: 0px 100px 0 100px;
 }
 
 .card-click {
@@ -398,5 +398,15 @@ body {
 
     .instruction {
         font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    img {
+        width: 150px;
+    }
+
+    .loser {
+        width: 150px;
     }
 }

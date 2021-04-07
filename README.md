@@ -91,10 +91,34 @@ You can access my game via this direct link: [Jeopardy!](https://samrevanoor.git
 
 -------
 
+### **Things I'm Proud Of**
+
+- Implementing the confetti when the player guesses correctly
+- Adding and timing sound effects based on the player's answer (or lack thereof)
+- After a *lot* of trial and error, figuring out my timers!
+- I realized I had chosen the "slim" version of jQuery and switched over to the minified one, and all of my animation issues disappeared!
+- Coming up with all of the trivia questions on my own (this took a long time ...)
+<br>
+
+-------
+
+### **Challenges I Faced**
+
+- Getting the 30-second timer to work for each card and reset at the correct time
+- Making sure the timer, once it reached 0, would send the player back to the game board page
+- Getting rid of the column gaps in the game board when I make the screen size smaller
+- Altering the fps (frames per second) of some gifs so they were in time with the music (as much as I could)
+- Ensuring my code remains consistent throughout
+- Trying to think of every possible correct (or semi-correct) answer in my array of answers for each question
+<br>
+
+-------
+
 ### **Next Steps**
 
 - Building out more levels
 - Adding bonus points for correct spelling
+- Adding a progress bar
 <br>
 
 -------

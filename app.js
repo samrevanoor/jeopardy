@@ -24,7 +24,7 @@ $(document).ready(function () {
     const levelEasy = {
         names: [{
             question: "Cersei's children are named Joffrey, Myrcella and ...",
-            answer: ["tommen", "tommen baratheon", "tommen lannister", "tommin"],
+            answer: ["tommen", "tommen baratheon", "tommen lannister", "tommin", "tomen"],
             points: 10
         }, {
             question: "He is also known as the 'Spider' or the 'Master of Whisperers'.",
@@ -62,28 +62,28 @@ $(document).ready(function () {
             points: 30
         }],
         images: [{
-            question: '<h5>Who is this?</h5><img src="Images/missandei.gif">',
+            question: '<h5>Who is this?</h5><img src="Images/easy1.gif">',
             answer: ["missandei", "misandei", "missandei of narth"],
             points: 10
         }, {
-            question: '<h5>Who is this?</h5><img src="Images/littlefinger.gif">',
+            question: '<h5>Who is this?</h5><img src="Images/easy2.gif">',
             answer: ["littlefinger", "petyr baelish", "lord baelish", "petyr", "peter baelish", "little finger"],
             points: 20
         }, {
-            question: '<h5>Who is this?</h5><img src="Images/margaery.gif">',
-            answer: ["margaery", "margaery tyrell", "margery"],
+            question: '<h5>Who is this?</h5><img src="Images/easy3.gif">',
+            answer: ["margaery", "margaery tyrell", "margery", "lady margaery", "lady margery", "lady tyrell"],
             points: 30
         }],
         other: [{
-            question: '<h5>Which hand did this man lose?</h5><img src="Images/jaime.gif">',
+            question: '<h5>Which hand did this man lose?</h5><img src="Images/easy4.gif">',
             answer: ["right"],
             points: 10
         }, {
-            question: "<h5>This man volunteers to be Tyrion's champion in the Eyrie.</h5><img src='Images/bronnimage2.gif'>",
+            question: "<h5>This man volunteers to be Tyrion's champion in the Eyrie.</h5><img src='Images/easy5.gif'>",
             answer: ["bronn", "ser bronn", "bron"],
             points: 20
         }, {
-            question: '<h5>What is the wedding of Edmure & Roslin Tully commonly called?</h5><img src="Images/red-wedding.png">',
+            question: '<h5>What is the wedding of Edmure & Roslin Tully commonly called?</h5><img src="Images/easy6.png">',
             answer: ["red wedding", "the red wedding"],
             points: 30
         }]
@@ -96,7 +96,7 @@ $(document).ready(function () {
             points: 10
         }, {
             question: "Daenerys' dragons were named Drogon, Viserion and ...",
-            answer: ["rhaegal"],
+            answer: ["rhaegal", "rheagal"],
             points: 20
         }, {
             question: "Olenna Tyrell is also known as ...",
@@ -109,7 +109,7 @@ $(document).ready(function () {
             points: 10
         }, {
             question: "This man's skull was crushed by the Mountain.",
-            answer: ["oberyn martell", "prince martell", "oberyn"],
+            answer: ["oberyn martell", "prince martell", "oberyn", "prince oberyn"],
             points: 20
         }, {
             question: "Lysa Arryn died by being pushed through the ...",
@@ -130,15 +130,15 @@ $(document).ready(function () {
             points: 30
         }],
         images: [{
-            question: '<h5>Who is this?</h5><img src="Images/pod.gif">',
+            question: '<h5>Who is this?</h5><img src="Images/hard1.gif">',
             answer: ["pod", "podrick", "podrick payne", "ser podrick payne"],
             points: 10
         }, {
-            question: '<h5>Who is this?</h5><img src="Images/shireen.gif">',
-            answer: ["shireen", "shireen baratheon"],
+            question: '<h5>Who is this?</h5><img src="Images/hard2.gif">',
+            answer: ["shireen", "shireen baratheon", "lady shireen"],
             points: 20
         }, {
-            question: '<h5>Who is this?</h5><img src="Images/tormund.gif">',
+            question: '<h5>Who is this?</h5><img src="Images/hard3.gif">',
             answer: ["tormund giantsbane", "tormund", "tormund giants bane", "tormund giantbane"],
             points: 30
         }],
@@ -198,28 +198,28 @@ $(document).ready(function () {
             points: 30
         }],
         images: [{
-            question: '<h5>Who is this?</h5><img src="Images/hot-pie.gif">',
-            answer: ["hot pie", "hotpie"],
+            question: '<h5>Who is this?</h5><img src="Images/superhard1.gif">',
+            answer: ["hot pie", "hotpie", "hot-pie"],
             points: 10
         }, {
-            question: '<h5>Who is this?</h5><img src="Images/lyanna.gif">',
+            question: '<h5>Who is this?</h5><img src="Images/superhard2.gif">',
             answer: ["lyanna", "lyanna mormont", "lady mormont", "lady lyanna mormont"],
             points: 20
         }, {
-            question: '<h5>Who is this?</h5><img src="Images/daario.gif">',
+            question: '<h5>Who is this?</h5><img src="Images/superhard3.gif">',
             answer: ["daario", "dario", "daario naharis", "dario naharis"],
             points: 30
         }],
         other: [{
-            question: '<h5>Where is this?</h5><img src="Images/braavos.png">',
-            answer: ["braavos"],
+            question: '<h5>Where is this?</h5><img src="Images/superhard4.png">',
+            answer: ["braavos", "bravos"],
             points: 10
         }, {
-            question: "<h5>Rickon Stark's direwolf was called ...</h5><img src='Images/shaggydog.gif'>",
+            question: "<h5>Rickon Stark's direwolf was called ...</h5><img src='Images/superhard5.gif'>",
             answer: ["shaggydog", "shaggy dog"],
             points: 20
         }, {
-            question: "<h5>Widow's Wail and Oathkeeper were forged from this ancestral sword of House Stark.</h5><img src='Images/ice.gif'>",
+            question: "<h5>Widow's Wail and Oathkeeper were forged from this ancestral sword of House Stark.</h5><img src='Images/superhard6.gif'>",
             answer: ["ice"],
             points: 30
         }]
@@ -332,6 +332,8 @@ $(document).ready(function () {
         }
     })
 
+    $("#player-name").focus()
+
     $(".question").on("click", handleCardClick)
 
     $("#submit-answer").on("click", checkAnswer)
@@ -410,6 +412,7 @@ $(document).ready(function () {
             .css({
                 display: "block"
             })
+        $("#player-answer").focus()
     }
 
     function startTimer() {
