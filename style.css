@@ -1,22 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap');
+* {
+    box-sizing: border-box;
+}
 
 body {
     background-color: rgba(72,166,176,255);
     font-family: 'Londrina Solid', serif;
     color: rgba(255, 217, 0, 0.877);
     letter-spacing: 2px;
-}
-
-#signature {
-    text-align: center;
-    color: rgb(255, 255, 255);
-    opacity: 0.5;
-    font-size: 28px;
-}
-
-#citation {
-    opacity: 1;
-    font-size: 15px;
 }
 
 .splash {
@@ -59,6 +50,18 @@ body {
     font-size: 18px;
 }
 
+#signature {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    opacity: 0.5;
+    font-size: 28px;
+}
+
+#citation {
+    opacity: 1;
+    font-size: 15px;
+}
+
 .post-splash {
     display: none;
     margin-bottom: 100px;
@@ -95,10 +98,12 @@ body {
 
 .game-board {
     display: grid;
+    grid-column-gap: 0px;
     align-items: center;
     background-color: rgb(34, 34, 143);
     padding: 0 50px 50px 50px;
     margin-top: 0;
+    justify-content: center;
 }
 
 .post-splash button {
@@ -211,4 +216,187 @@ body {
 
 .level {
     float: right;
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1000px) {
+    .game-board {
+        display: grid;
+        grid-column-gap: 0px;
+        padding: 0 30px 30px 30px;
+        margin-top: 0;
+        justify-content: center;
+    }
+
+    .post-splash {
+        margin: 0 auto;
+    }
+
+    .post-splash div {
+        padding-right: 0;
+        padding-left: 0;
+        flex-grow: 0;
+    }
+
+    .post-splash button {
+        padding: 5px 0 5px 0;
+        width: 120px;
+        margin: 0;
+        font-size: 30px;
+    }
+
+    .post-splash .categories button {
+        width: 120px;
+    }
+
+    img {
+        width: 350px;
+    }
+
+    #reset-button {
+        float: right;
+        border-radius: 20px;
+        margin: 0 auto;
+        padding: 5px;
+        font-size: 20px;
+        width: 150px;
+    }
+
+    .footer {
+        margin: 30px 50px 0 50px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 800px) {
+    .post-splash button {
+        padding: 5px 0 5px 0;
+        width: 100px;
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .post-splash div {
+        padding-right: 0;
+        padding-left: 0;
+        flex-grow: 0;
+    }
+
+    .splash h3 {
+        font-size: 20px;
+    }
+
+    img {
+        width: 350px;
+    }
+
+    #reset-button {
+        float: right;
+        border-radius: 20px;
+        margin: 0 auto;
+        padding: 5px;
+        font-size: 20px;
+        width: 120px;
+    }
+
+    .footer {
+        margin: 30px 50px 0 50px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .splash {
+        padding: 100px 20px 0 20px;
+        margin: 0 auto;
+        background-size: 120%;
+    }
+
+    .splash h1 {
+        font-size: 30px;
+    }
+
+    .splash h3 {
+        font-size: 18px;
+    }
+
+    .splash input {
+        width: 200px;
+        height: 30px;
+        margin: 0 auto;
+        font-size: 20px;
+        padding: 20px;
+    }
+    
+    .splash button {
+        margin: 10px auto;
+        padding: 4px 8px 4px 8px;
+        background-color: rgba(255,155,89,255);
+        border-radius: 20px;
+        font-size: 15px;
+    }
+    
+    .level button {
+        margin: 10px auto;
+        padding: 6px 10px 6px 10px;
+        background-color: rgba(255,155,89,255);
+        border-radius: 20px;
+    }
+
+    #signature {
+        font-size: 18px;
+        margin-top: 50px;
+    }
+    
+    #citation {
+        font-size: 12px;
+    }
+
+    .game-board {
+        display: grid;
+        grid-template-areas: 
+            "categories questions questions questions"
+            "categories questions questions questions"
+            "categories questions questions questions"
+            "categories questions questions questions"
+            "categories questions questions questions";
+        grid-gap: 0px;
+    }
+
+    .post-splash button {
+        padding: 5px 0 5px 0;
+        width: 60px;
+        margin: 0;
+        font-size: 15px;
+    }
+
+    .post-splash .categories button {
+        width: 80px;
+    }
+
+    img {
+        width: 250px;
+    }
+
+    #reset-button {
+        float: right;
+        border-radius: 20px;
+        margin: 0 auto;
+        padding: 5px;
+        font-size: 15px;
+        width: 100px;
+    }
+
+    .footer h3 {
+        font-size: 18px;
+    }
+
+    .footer {
+        margin: 30px 40px 0 40px;
+    }
+
+    .card-click h5 {
+        font-size: 24px;
+    }
+
+    .instruction {
+        font-size: 20px;
+    }
 }

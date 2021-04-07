@@ -555,7 +555,7 @@ $(document).ready(function () {
     function renderBoard() {
         $background
             .css({
-                display: "block",
+                display: "grid",
             });
         $cardClick
             .css({
