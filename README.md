@@ -1,7 +1,6 @@
 # Game of Thrones-themed Jeopardy!
 ## by Sam Revanoor
 
-<br>
 
 ### **Background**
 
@@ -19,7 +18,6 @@ My game has a slight twist on Jeopardy, where I don't ask the player to enter th
 <br>
 
 -------
-<br>
 
 ### **Rules**
 - Players can choose between 3 levels
@@ -32,10 +30,8 @@ My game has a slight twist on Jeopardy, where I don't ask the player to enter th
 - Player will only have one chance to answer each question
 - Player can reset the game at any time
 <br>
-<br>
 
 -------
-<br>
 
 ### **Screenshots**
 <img src="Images/screenshot2.png">
@@ -65,23 +61,17 @@ If the player guesses correctly (see below), confetti will fall down the page. I
 <img src="Images/screenshot5.png">
 <br>
 <br>
-
 When they return back to the game board page, the question is marked as "completed" and the points are updated (if they got it right).
 <br>
 <br>
-
 At the end of the game, depending on how many points the player has accumulated, they will see a personalized message at the end and an opportunity to play again.
 <br>
 <br>
 
 <img src="Images/screenshot6.png">
-
-<br>
 <br>
 
 -------
-
-<br>
 
 ### **Technologies**
 
@@ -91,41 +81,29 @@ At the end of the game, depending on how many points the player has accumulated,
 - jQuery
 - Bootstrap
 <br>
-<br>
 
 -------
-
-<br>
 
 ### **Getting Started**
 
-You can access my game via this direct link: ____
-<br>
+You can access my game via this direct link: [Jeopardy!](https://samrevanoor.github.io/jeopardy/)
 <br>
 
 -------
-
-<br>
 
 ### **Next Steps**
 
 - Building out more levels
 - Adding bonus points for correct spelling
 <br>
-<br>
 
 -------
-
-<br>
 
 ### **Extras**
 - [Wireframing](wireframing.md)
 - [Pseudocode](pseudocode.md)
 <br>
-<br>
 
 -------
-
-<br>
 
 Thank you for reading! Enjoy playing and please share feedback 😊
