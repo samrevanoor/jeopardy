@@ -12,7 +12,7 @@ body {
 
 .splash {
     display: grid;
-    background-image: url("/Users/samrevanoor/Desktop/GA/Project-1/Pictures/background.gif");
+    background-image: url("https://github.com/samrevanoor/jeopardy/blob/c05c168dfb6c6001d7c0cf5f7bfb1eafae2f8e15/Pictures/background.gif");
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;
