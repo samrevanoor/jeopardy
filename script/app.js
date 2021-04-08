@@ -264,6 +264,34 @@ $(document).ready(function () {
                 backgroundColor: "#ff9b59",
                 opacity: "1"
             })
+        $(".instruction")
+            .css({
+                display: "block"
+            })
+        $(".lower-instruction")
+            .css({
+                display: "none"
+            })
+        $("#star1")
+            .css({
+                display: "none"
+            })
+        $("#star2")
+            .css({
+                display: "none"
+            })
+        $("#star3")
+            .css({
+                display: "none"
+            })
+        $("#star4")
+            .css({
+                display: "none"
+            })
+        $("#star5")
+            .css({
+                display: "none"
+            })
         currentPoints = 0;
         $playerPoints.html(currentPoints);
         $(".question").removeClass("disabled");
@@ -577,6 +605,52 @@ $(document).ready(function () {
         clearGameTimer();
         if (isGameOver === true) {
             endGame();
+        }
+        $(".instruction")
+            .css({
+                display: "none"
+            })
+        $(".lower-instruction")
+            .css({
+                display: "block"
+            })
+        numberOfStars();
+    }
+
+    function numberOfStars() {
+        if (currentPoints > 50) {
+            $(".lower-instruction")
+                .css({
+                    display: "none"
+                });
+            $("#star1")
+                .css({
+                    display: "inline"
+                })
+        };
+        if (currentPoints > 100) {
+            $("#star2")
+                .css({
+                    display: "inline"
+                })
+        };
+        if (currentPoints > 150) {
+            $("#star3")
+                .css({
+                    display: "inline"
+                })
+        };
+        if (currentPoints > 200) {
+            $("#star4")
+                .css({
+                    display: "inline"
+                })
+        };
+        if (currentPoints > 250) {
+            $("#star5")
+                .css({
+                    display: "inline"
+                })
         }
     }
 

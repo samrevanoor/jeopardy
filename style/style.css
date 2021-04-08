@@ -136,9 +136,21 @@ body {
     background-image: linear-gradient(rgba(255, 217, 0, 0.877),rgba(187, 160, 4, 0.877));
 }
 
-.instruction {
+.upper-footer {
     text-align: center;
+}
+
+.instruction {
     letter-spacing: 3px;
+}
+
+.star {
+    font-size: 100%;
+    color: gold;
+}
+
+.lower-instruction {
+    display: none;
 }
 
 .footer {
