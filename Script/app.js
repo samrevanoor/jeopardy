@@ -61,7 +61,7 @@ $(document).ready(function () {
             points: 30
         }],
         images: [{
-            question: '<h5>Who is this?</h5><img src="jeopardy/Pictures/easy1.gif">',
+            question: '<h5>Who is this?</h5><img src="Pictures/easy1.gif">',
             answer: ["missandei", "misandei", "missandei of narth"],
             points: 10
         }, {
