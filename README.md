@@ -33,19 +33,19 @@ My game has a slight twist on Jeopardy, where I don't ask the player to enter th
 -------
 
 ### **Screenshots**
-<img src="Images/screenshot2.png">
+<img src="Pictures/screenshot2.png">
 
 This is the landing page of the game, where players can choose their level. Once they enter their name and click on _Start_, the game will begin.
 <br>
 <br>
 
-<img src="Images/screenshot3.png">
+<img src="Pictures/screenshot3.png">
 
 This is the game board page, with 5 categories and 3 questions for each category. Players can click on the option they want to try guessing first (it does not have to be done in any specific order).
 <br>
 <br>
 
-<img src="Images/screenshot4.png">
+<img src="Pictures/screenshot4.png">
 
 When a player clicks on the question they want to answer, the question "card" takes over the page and a 30-second timer begins.
 <br>
@@ -54,11 +54,11 @@ If the player guesses correctly (see below), confetti will fall down the page. I
 <br>
 <br>
 
-<img src="Images/screenshot1.png">
+<img src="Pictures/screenshot1.png">
 <br>
 <br>
 
-<img src="Images/screenshot5.png">
+<img src="Pictures/screenshot5.png">
 
 When they return back to the game board page, the question is marked as "completed" and the points are updated (if they got it right).
 <br>
@@ -67,7 +67,7 @@ At the end of the game, depending on how many points the player has accumulated,
 <br>
 <br>
 
-<img src="Images/screenshot6.png">
+<img src="Pictures/screenshot6.png">
 
 -------
 
