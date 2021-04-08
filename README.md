@@ -98,6 +98,7 @@ You can access my game via this direct link: [Jeopardy!](https://samrevanoor.git
 - Working with classes, jQuery and CSS to indicate that a particular question had already been answered
 - Learning how to use jQuery animations
 - Learning how to manipulate audio using jQuery
+- Restructuring my game to make it scalable (i.e.: making it easy to add multiple levels down the line)
 - Becoming comfortable with my code 🥰
 
 -------

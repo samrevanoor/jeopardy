@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-    // variables
     const $background = $(".container");
     const $landingPage = $(".splash");
     const $gamePage = $(".post-splash");
@@ -272,7 +271,6 @@ $(document).ready(function () {
         playerAnswer = "";
     }
 
-    // event listeners
     $("#easy").on("click", function () {
         $("#hard")
             .css({
@@ -346,7 +344,6 @@ $(document).ready(function () {
 
     $resetGame.on("click", initGame);
 
-    // event handlers
     function letTheGamesBegin() {
         $playerName = $("#player-name").val().trim();
         if (!gameLevel) {
@@ -415,7 +412,7 @@ $(document).ready(function () {
                 display: "block"
             })
         let width = $(window).width();
-        if (width > 600){
+        if (width > 600) {
             $("#player-answer").focus()
         }
     }
@@ -498,7 +495,7 @@ $(document).ready(function () {
         }
     }
 
-    function everyQuestionAnswered(el){
+    function everyQuestionAnswered(el) {
         return $(el).hasClass("disabled")
     }
 
