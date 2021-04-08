@@ -46,6 +46,7 @@ This is the game board page, with 5 categories and 3 questions for each category
 <br>
 
 <img src="Images/screenshot4.png">
+
 When a player clicks on the question they want to answer, the question "card" takes over the page and a 30-second timer begins.
 <br>
 <br>
@@ -58,8 +59,7 @@ If the player guesses correctly (see below), confetti will fall down the page. I
 <br>
 
 <img src="Images/screenshot5.png">
-<br>
-<br>
+
 When they return back to the game board page, the question is marked as "completed" and the points are updated (if they got it right).
 <br>
 <br>
