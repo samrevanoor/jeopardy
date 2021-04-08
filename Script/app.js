@@ -65,24 +65,24 @@ $(document).ready(function () {
             answer: ["missandei", "misandei", "missandei of narth"],
             points: 10
         }, {
-            question: '<h5>Who is this?</h5><img src="/Users/samrevanoor/Desktop/GA/Project-1/Pictures/easy2.gif">',
+            question: '<h5>Who is this?</h5><img src="Pictures/easy2.gif">',
             answer: ["littlefinger", "petyr baelish", "lord baelish", "petyr", "peter baelish", "little finger"],
             points: 20
         }, {
-            question: '<h5>Who is this?</h5><img src="/Users/samrevanoor/Desktop/GA/Project-1/Pictures/easy3.gif">',
+            question: '<h5>Who is this?</h5><img src="Pictures/easy3.gif">',
             answer: ["margaery", "margaery tyrell", "margery", "lady margaery", "lady margery", "lady tyrell"],
             points: 30
         }],
         other: [{
-            question: '<h5>Which hand did this man lose?</h5><img src="/Users/samrevanoor/Desktop/GA/Project-1/Pictures/easy4.gif">',
+            question: '<h5>Which hand did this man lose?</h5><img src="Pictures/easy4.gif">',
             answer: ["right"],
             points: 10
         }, {
-            question: "<h5>This man volunteers to be Tyrion's champion in the Eyrie.</h5><img src='/Users/samrevanoor/Desktop/GA/Project-1/Pictures/easy5.gif'>",
+            question: "<h5>This man volunteers to be Tyrion's champion in the Eyrie.</h5><img src='Pictures/easy5.gif'>",
             answer: ["bronn", "ser bronn", "bron"],
             points: 20
         }, {
-            question: '<h5>What is the wedding of Edmure & Roslin Tully commonly called?</h5><img src="/Users/samrevanoor/Desktop/GA/Project-1/Pictures/easy6.png">',
+            question: '<h5>What is the wedding of Edmure & Roslin Tully commonly called?</h5><img src="Pictures/easy6.png">',
             answer: ["red wedding", "the red wedding"],
             points: 30
         }]
@@ -129,28 +129,28 @@ $(document).ready(function () {
             points: 30
         }],
         images: [{
-            question: '<h5>Who is this?</h5><img src="/Users/samrevanoor/Desktop/GA/Project-1/Pictures/hard1.gif">',
+            question: '<h5>Who is this?</h5><img src="Pictures/hard1.gif">',
             answer: ["pod", "podrick", "podrick payne", "ser podrick payne"],
             points: 10
         }, {
-            question: '<h5>Who is this?</h5><img src="/Users/samrevanoor/Desktop/GA/Project-1/Pictures/hard2.gif">',
+            question: '<h5>Who is this?</h5><img src="Pictures/hard2.gif">',
             answer: ["shireen", "shireen baratheon", "lady shireen"],
             points: 20
         }, {
-            question: '<h5>Who is this?</h5><img src="/Users/samrevanoor/Desktop/GA/Project-1/Pictures/hard3.gif">',
+            question: '<h5>Who is this?</h5><img src="Pictures/hard3.gif">',
             answer: ["tormund giantsbane", "tormund", "tormund giants bane", "tormund giantbane"],
             points: 30
         }],
         other: [{
-            question: '<h5>Which castle is this?</h5><img src="/Users/samrevanoor/Desktop/GA/Project-1/Pictures/castle1.jpeg">',
+            question: '<h5>Which castle is this?</h5><img src="Pictures/castle1.jpeg">',
             answer: ["dragonstone", "dragon stone"],
             points: 10
         }, {
-            question: '<h5>Which castle is this?</h5><img src="/Users/samrevanoor/Desktop/GA/Project-1/Pictures/castle2.png">',
+            question: '<h5>Which castle is this?</h5><img src="Pictures/castle2.png">',
             answer: ["castle black"],
             points: 20
         }, {
-            question: "<h5>Jaqen H'ghar helped Arya escape from ...</h5><img src='/Users/samrevanoor/Desktop/GA/Project-1/Pictures/castle3.jpeg'>",
+            question: "<h5>Jaqen H'ghar helped Arya escape from ...</h5><img src='Pictures/castle3.jpeg'>",
             answer: ["harrenhal", "harren hal", "harrenhall", "harren hall"],
             points: 30
         }]
@@ -197,28 +197,28 @@ $(document).ready(function () {
             points: 30
         }],
         images: [{
-            question: '<h5>Who is this?</h5><img src="/Users/samrevanoor/Desktop/GA/Project-1/Pictures/superhard1.gif">',
+            question: '<h5>Who is this?</h5><img src="Pictures/superhard1.gif">',
             answer: ["hot pie", "hotpie", "hot-pie"],
             points: 10
         }, {
-            question: '<h5>Who is this?</h5><img src="/Users/samrevanoor/Desktop/GA/Project-1/Pictures/superhard2.gif">',
+            question: '<h5>Who is this?</h5><img src="Pictures/superhard2.gif">',
             answer: ["lyanna", "lyanna mormont", "lady mormont", "lady lyanna mormont"],
             points: 20
         }, {
-            question: '<h5>Who is this?</h5><img src="/Users/samrevanoor/Desktop/GA/Project-1/Pictures/superhard3.gif">',
+            question: '<h5>Who is this?</h5><img src="Pictures/superhard3.gif">',
             answer: ["daario", "dario", "daario naharis", "dario naharis"],
             points: 30
         }],
         other: [{
-            question: '<h5>Where is this?</h5><img src="/Users/samrevanoor/Desktop/GA/Project-1/Pictures/superhard4.png">',
+            question: '<h5>Where is this?</h5><img src="Pictures/superhard4.png">',
             answer: ["braavos", "bravos"],
             points: 10
         }, {
-            question: "<h5>Rickon Stark's direwolf was called ...</h5><img src='/Users/samrevanoor/Desktop/GA/Project-1/Pictures/superhard5.gif'>",
+            question: "<h5>Rickon Stark's direwolf was called ...</h5><img src='Pictures/superhard5.gif'>",
             answer: ["shaggydog", "shaggy dog"],
             points: 20
         }, {
-            question: "<h5>Widow's Wail and Oathkeeper were forged from this ancestral sword of House Stark.</h5><img src='/Users/samrevanoor/Desktop/GA/Project-1/Pictures/superhard6.gif'>",
+            question: "<h5>Widow's Wail and Oathkeeper were forged from this ancestral sword of House Stark.</h5><img src='Pictures/superhard6.gif'>",
             answer: ["ice"],
             points: 30
         }]
