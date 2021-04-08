@@ -125,7 +125,7 @@ You can access my game via this direct link: [Jeopardy!](https://samrevanoor.git
 
 ### **Extras**
 - [Wireframing](wireframing.md)
-- [Pseudocode](Resources/pseudocode.md)
+- [Pseudocode](Extras/pseudocode.md)
 
 -------
 
