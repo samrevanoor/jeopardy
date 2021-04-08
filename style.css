@@ -401,12 +401,48 @@ body {
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 475px) {
     img {
-        width: 80px;
+        width: 150px;
+        margin: 0 auto;
+    }
+
+    .card-click input {
+        width: 150px;
+        height: 50px;
+        font-size: 16px;
+        padding: 10px;
     }
 
     .loser {
-        width: 80px;
+        width: 150px;
+    }
+
+    #citation {
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 399px) {
+    .splash h1 {
+        font-size: 22px;
+    }
+
+    .splash h3 {
+        font-size: 16px;
+    }
+
+    .level {
+        display: grid;
+        grid-row-gap: 0px;
+        margin: 0 auto;
+        padding: 0px;
+    }
+    .jumbotron h1 {
+        font-size: 60px;
+    }
+
+    .card-second-body h5 {
+        font-size: 20px;
     }
 }

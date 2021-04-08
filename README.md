@@ -98,6 +98,9 @@ You can access my game via this direct link: [Jeopardy!](https://samrevanoor.git
 - After a *lot* of trial and error, figuring out my timers!
 - I realized I had chosen the "slim" version of jQuery and switched over to the minified one, and all of my animation issues disappeared!
 - Coming up with all of the trivia questions on my own (this took a long time ...)
+- Working with classes, jQuery and CSS to indicate that a particular question had already been answered
+- Learning how to use jQuery animations
+- Learning how to manipulate audio using jQuery
 <br>
 
 -------
@@ -106,9 +109,10 @@ You can access my game via this direct link: [Jeopardy!](https://samrevanoor.git
 
 - Getting the 30-second timer to work for each card and reset at the correct time
 - Making sure the timer, once it reached 0, would send the player back to the game board page
+- Similar to the previous point, making sure all of my many `setTimeout` functions worked as intended
 - Getting rid of the column gaps in the game board when I make the screen size smaller
 - Altering the fps (frames per second) of some gifs so they were in time with the music (as much as I could)
-- Ensuring my code remains consistent throughout
+- Ensuring my code remains consistent throughout (i.e.: ensuring I used jQuery throughout instead of a mix of jQuery and JS)
 - Trying to think of every possible correct (or semi-correct) answer in my array of answers for each question
 <br>
 

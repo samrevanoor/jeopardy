@@ -355,8 +355,10 @@ $(document).ready(function () {
             blinkText($(".name"));
             blinkText($("#player-name"));
         } else {
-            $landingPage.fadeOut(1000)
-            $gamePage.fadeIn(5000)
+            $landingPage
+                .fadeOut(1000)
+            $gamePage
+                .fadeIn(5000)
             $("body")
                 .fadeIn(4000)
                 .css({
@@ -400,7 +402,7 @@ $(document).ready(function () {
         };
         renderCard();
         generateQuestion(currentQuestion, currentCategory);
-        answeredQuestion(evt);
+        answeredQuestion(currentCategory);
     }
 
     function renderCard() {
@@ -412,7 +414,10 @@ $(document).ready(function () {
             .css({
                 display: "block"
             })
-        $("#player-answer").focus()
+        let width = $(window).width();
+        if (width > 600){
+            $("#player-answer").focus()
+        }
     }
 
     function startTimer() {
@@ -480,17 +485,21 @@ $(document).ready(function () {
         $(".trombone")[0].currentTime = 0;
     }
 
-    function answeredQuestion(evt) {
-        evt.target.classList.add("disabled");
+    function answeredQuestion(currentCategory) {
+        currentCategory.add("disabled");
         checkGameStatus();
     }
 
     function checkGameStatus() {
-        if (Array.from($(".question")).every(el => $(el).hasClass("disabled"))) {
+        if (Array.from($(".question")).every(everyQuestionAnswered)) {
             isGameOver = true;
         } else {
             isGameOver = false;
         }
+    }
+
+    function everyQuestionAnswered(el){
+        return $(el).hasClass("disabled")
     }
 
     function endGame() {
@@ -580,6 +589,7 @@ $(document).ready(function () {
         confetti.start();
         $(".theme")[0].pause();
         $(".cheer")[0].play();
+        $(".cheer").prop("volume", 0.3);
         $("#submit-answer").html("nice job!");
         $("#submit-answer").addClass("disabled");
         setTimeout(correctCard, 2000);
