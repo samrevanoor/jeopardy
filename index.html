@@ -6,23 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeopardy</title>
-
-    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="style.css">
-    <script defer src="app.js"></script>
-    <script src="confetti.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <script defer src="script/app.js"></script>
+    <script src="resources/confetti.js"></script>
 </head>
 
 <body>
@@ -35,16 +28,13 @@
         <button class="start-game">start</button>
     </div>
     <div class="container post-splash">
-        <!-- header -->
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <p>GAME OF THRONES-THEMED</p>
                 <h1 class="display-2">JEOPARDY!</h1>
             </div>
         </div>
-        <!-- game board -->
         <div class="container game-board">
-            <!-- table 5x4, top row lists categories -->
             <div class="row categories">
                 <div class="col">
                     <button>NAMES</button>
@@ -130,7 +120,7 @@
     </div>
     <div class="card-click">
         <div class="card-body">
-            <img class="loser" src="Images/loser-slowed.gif" width="500"></img>
+            <img class="loser" src="images/loser-slowed.gif" width="500"></img>
             <div class="card-second-body">
                 <span id="stopWatch">30</span>
                 <h5>Question goes here</h5>
@@ -141,19 +131,19 @@
             </div>
         </div>
         <audio class="theme">
-            <source src="Sounds/Jeopardy-theme-song.mp3">
+            <source src="sounds/jeopardy-theme-song.mp3">
             </source>
         </audio>
         <audio class="cheer">
-            <source src="Sounds/cheering-children.mp3">
+            <source src="sounds/cheering-children.mp3">
             </source>
         </audio>
         <audio class="roar">
-            <source src="Sounds/dragon-roar.mp3">
+            <source src="sounds/dragon-roar.mp3">
             </source>
         </audio>
         <audio class="trombone">
-            <source src="Sounds/sadtrombone.mp3">
+            <source src="sounds/sadtrombone.mp3">
             </source>
         </audio>
     </div>

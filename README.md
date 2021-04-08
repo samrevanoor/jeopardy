@@ -29,7 +29,6 @@ My game has a slight twist on Jeopardy, where I don't ask the player to enter th
 - The minimum points a player can get is 0 (if they guess every question incorrectly)
 - Player will only have one chance to answer each question
 - Player can reset the game at any time
-<br>
 
 -------
 
@@ -69,7 +68,6 @@ At the end of the game, depending on how many points the player has accumulated,
 <br>
 
 <img src="Images/screenshot6.png">
-<br>
 
 -------
 
@@ -80,7 +78,6 @@ At the end of the game, depending on how many points the player has accumulated,
 - JavaScript
 - jQuery
 - Bootstrap
-<br>
 
 -------
 
@@ -102,7 +99,6 @@ You can access my game via this direct link: [Jeopardy!](https://samrevanoor.git
 - Learning how to use jQuery animations
 - Learning how to manipulate audio using jQuery
 - Becoming comfortable with my code 🥰
-<br>
 
 -------
 
@@ -115,7 +111,6 @@ You can access my game via this direct link: [Jeopardy!](https://samrevanoor.git
 - Altering the fps (frames per second) of some gifs so they were in time with the music (as much as I could)
 - Ensuring my code remains consistent throughout (i.e.: ensuring I used jQuery throughout instead of a mix of jQuery and JS)
 - Trying to think of every possible correct (or semi-correct) answer in my array of answers for each question
-<br>
 
 -------
 
@@ -124,14 +119,12 @@ You can access my game via this direct link: [Jeopardy!](https://samrevanoor.git
 - Building out more levels
 - Adding bonus points for correct spelling
 - Adding a progress bar
-<br>
 
 -------
 
 ### **Extras**
-- [Wireframing](wireframing.md)
-- [Pseudocode](pseudocode.md)
-<br>
+- [Wireframing](resources/wireframing.md)
+- [Pseudocode](resources/pseudocode.md)
 
 -------
 
