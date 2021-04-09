@@ -178,6 +178,11 @@ body {
     display: none
 }
 
+#card-star {
+    font-size: 200%;
+    color: navy;
+}
+
 .card-click h5 {
     font-size: 30px;
 }
@@ -403,6 +408,10 @@ body {
         width: 60px;
         margin: 0;
         font-size: 15px;
+    }
+
+    .lower-instruction {
+        font-size: 20px;
     }
 
     .post-splash .categories button {

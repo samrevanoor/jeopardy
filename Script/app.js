@@ -322,10 +322,6 @@ $(document).ready(function () {
             .css({
                 display: "block"
             })
-        $("#second-reminder")
-            .css({
-                display: "none"
-            })
         $("#star1")
             .css({
                 display: "none"
@@ -343,6 +339,10 @@ $(document).ready(function () {
                 display: "none"
             })
         $("#star5")
+            .css({
+                display: "none"
+            })
+        $("#card-star")
             .css({
                 display: "none"
             })
@@ -466,7 +466,7 @@ $(document).ready(function () {
         }
     }
 
-    function noCheatingPlaceHolder(){
+    function noCheatingPlaceHolder() {
         $("#player-answer").attr("placeholder", "no cheating!")
     }
 
@@ -549,15 +549,27 @@ $(document).ready(function () {
     function generateQuestion(currentQuestion, currentCategory) {
         if (currentCategory.contains("names")) {
             $cardQuestion.html(game.names[currentQuestion].question);
+            if (currentQuestion == 0) {
+                showCardStar();
+            };
         };
         if (currentCategory.contains("deaths")) {
             $cardQuestion.html(game.deaths[currentQuestion].question);
+            if (currentQuestion == 1) {
+                showCardStar();
+            };
         };
         if (currentCategory.contains("houses")) {
             $cardQuestion.html(game.houses[currentQuestion].question);
+            if (currentQuestion == 2) {
+                showCardStar();
+            };
         };
         if (currentCategory.contains("images")) {
             $cardQuestion.html(game.images[currentQuestion].question);
+            if (currentQuestion == 0) {
+                showCardStar();
+            };
             $cardClick
                 .css({
                     padding: "5px 10px 5px 10px",
@@ -566,6 +578,9 @@ $(document).ready(function () {
         };
         if (currentCategory.contains("other")) {
             $cardQuestion.html(game.other[currentQuestion].question);
+            if (currentQuestion == 2) {
+                showCardStar();
+            };
             $cardClick
                 .css({
                     padding: "5px 10px 5px 10px",
@@ -574,6 +589,13 @@ $(document).ready(function () {
         };
         startTheme();
         startTimer();
+    }
+
+    function showCardStar() {
+        $("#card-star")
+            .css({
+                display: "block"
+            })
     }
 
     function startTheme() {
@@ -638,39 +660,89 @@ $(document).ready(function () {
         playerAnswer = $("#player-answer").val().trim().toLowerCase();
         if (currentCategory.contains("names")) {
             if (game.names[currentQuestion].answer.includes(playerAnswer)) {
-                ifAnswerCorrect(game.names[currentQuestion].points)
+                ifAnswerCorrect(game.names[currentQuestion].points);
+                if (currentQuestion == 0) {
+                    showStar1();
+                }
             } else {
                 ifAnswerWrong()
-            }
+            };
         };
         if (currentCategory.contains("deaths")) {
             if (game.deaths[currentQuestion].answer.includes(playerAnswer)) {
-                ifAnswerCorrect(game.deaths[currentQuestion].points)
+                ifAnswerCorrect(game.deaths[currentQuestion].points);
+                if (currentQuestion == 1) {
+                    showStar2();
+                }
             } else {
                 ifAnswerWrong()
             }
         };
         if (currentCategory.contains("houses")) {
             if (game.houses[currentQuestion].answer.includes(playerAnswer)) {
-                ifAnswerCorrect(game.houses[currentQuestion].points)
+                ifAnswerCorrect(game.houses[currentQuestion].points);
+                if (currentQuestion == 2) {
+                    showStar3();
+                }
             } else {
                 ifAnswerWrong()
             }
         };
         if (currentCategory.contains("images")) {
             if (game.images[currentQuestion].answer.includes(playerAnswer)) {
-                ifAnswerCorrect(game.images[currentQuestion].points)
+                ifAnswerCorrect(game.images[currentQuestion].points);
+                if (currentQuestion == 0) {
+                    showStar4();
+                }
             } else {
                 ifAnswerWrong()
             }
         };
         if (currentCategory.contains("other")) {
             if (game.other[currentQuestion].answer.includes(playerAnswer)) {
-                ifAnswerCorrect(game.other[currentQuestion].points)
+                ifAnswerCorrect(game.other[currentQuestion].points);
+                if (currentQuestion == 2) {
+                    showStar5();
+                }
             } else {
                 ifAnswerWrong()
             }
         };
+    }
+
+    function showStar1() {
+        $("#star1")
+            .css({
+                display: "inline"
+            })
+    }
+
+    function showStar2() {
+        $("#star2")
+            .css({
+                display: "inline"
+            })
+    }
+
+    function showStar3() {
+        $("#star3")
+            .css({
+                display: "inline"
+            })
+    }
+
+    function showStar4() {
+        $("#star4")
+            .css({
+                display: "inline"
+            })
+    }
+
+    function showStar5() {
+        $("#star5")
+            .css({
+                display: "inline"
+            })
     }
 
     function renderBoard() {
@@ -703,51 +775,12 @@ $(document).ready(function () {
         $("#first-reminder")
             .css({
                 display: "none"
-            })
-        $("#second-reminder")
+            });
+        $("#card-star")
             .css({
-                display: "block"
+                display: "none"
             })
-        numberOfStars();
     }
-
-    function numberOfStars() {
-        if (currentPoints >= 50) {
-            $(".lower-instruction")
-                .css({
-                    display: "none"
-                });
-            $("#star1")
-                .css({
-                    display: "inline"
-                })
-        };
-        if (currentPoints >= 100) {
-            $("#star2")
-                .css({
-                    display: "inline"
-                })
-        };
-        if (currentPoints >= 150) {
-            $("#star3")
-                .css({
-                    display: "inline"
-                })
-        };
-        if (currentPoints >= 200) {
-            $("#star4")
-                .css({
-                    display: "inline"
-                })
-        };
-        if (currentPoints >= 250) {
-            $("#star5")
-                .css({
-                    display: "inline"
-                })
-        }
-    }
-
 
     function ifAnswerCorrect(category) {
         currentPoints += category;
