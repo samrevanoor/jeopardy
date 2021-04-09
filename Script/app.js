@@ -310,9 +310,44 @@ $(document).ready(function () {
                 backgroundColor: "#ff9b59",
                 opacity: "1"
             })
+        $(".instruction")
+            .css({
+                display: "block"
+            })
+        $(".lower-instruction")
+            .css({
+                display: "none"
+            })
+        $("#first-reminder")
+            .css({
+                display: "block"
+            })
+        $("#second-reminder")
+            .css({
+                display: "none"
+            })
+        $("#star1")
+            .css({
+                display: "none"
+            })
+        $("#star2")
+            .css({
+                display: "none"
+            })
+        $("#star3")
+            .css({
+                display: "none"
+            })
+        $("#star4")
+            .css({
+                display: "none"
+            })
+        $("#star5")
+            .css({
+                display: "none"
+            })
         currentPoints = 0;
         $playerPoints.html(currentPoints);
-        $hint.html("hint");
         $(".question").removeClass("disabled");
         gameLevel = "";
         playerAnswer = "";
@@ -391,8 +426,12 @@ $(document).ready(function () {
 
     $('#player-answer').on("paste", function (e) {
         e.preventDefault();
+        noCheatingPlaceHolder();
     });
 
+    function noCheatingPlaceHolder(){
+        $("#player-answer").attr("placeholder", "no cheating!")
+    }
     $("#player-answer").keypress(function () {
         $("#submit-answer").html("submit")
     })
@@ -652,11 +691,27 @@ $(document).ready(function () {
         }
         $("#submit-answer").html("skip")
         $hint.html("hint");
+        $(".instruction")
+            .css({
+                display: "none"
+            })
+        $(".lower-instruction")
+            .css({
+                display: "block"
+            })
+        $("#first-reminder")
+            .css({
+                display: "none"
+            })
+        $("#second-reminder")
+            .css({
+                display: "block"
+            })
         numberOfStars();
     }
 
     function numberOfStars() {
-        if (currentPoints > 50) {
+        if (currentPoints >= 50) {
             $(".lower-instruction")
                 .css({
                     display: "none"
@@ -666,25 +721,25 @@ $(document).ready(function () {
                     display: "inline"
                 })
         };
-        if (currentPoints > 100) {
+        if (currentPoints >= 100) {
             $("#star2")
                 .css({
                     display: "inline"
                 })
         };
-        if (currentPoints > 150) {
+        if (currentPoints >= 150) {
             $("#star3")
                 .css({
                     display: "inline"
                 })
         };
-        if (currentPoints > 200) {
+        if (currentPoints >= 200) {
             $("#star4")
                 .css({
                     display: "inline"
                 })
         };
-        if (currentPoints > 250) {
+        if (currentPoints >= 250) {
             $("#star5")
                 .css({
                     display: "inline"
