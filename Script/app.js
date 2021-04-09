@@ -429,9 +429,6 @@ $(document).ready(function () {
         noCheatingPlaceHolder();
     });
 
-    function noCheatingPlaceHolder(){
-        $("#player-answer").attr("placeholder", "no cheating!")
-    }
     $("#player-answer").keypress(function () {
         $("#submit-answer").html("submit")
     })
@@ -467,6 +464,10 @@ $(document).ready(function () {
             $("#player-level").html(gameLevel);
             return;
         }
+    }
+
+    function noCheatingPlaceHolder(){
+        $("#player-answer").attr("placeholder", "no cheating!")
     }
 
     function blinkText(sel) {
