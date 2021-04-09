@@ -651,8 +651,47 @@ $(document).ready(function () {
             endGame();
         }
         $("#submit-answer").html("skip")
-        $hint.html("hint")
+        $hint.html("hint");
+        numberOfStars();
     }
+
+    function numberOfStars() {
+        if (currentPoints > 50) {
+            $(".lower-instruction")
+                .css({
+                    display: "none"
+                });
+            $("#star1")
+                .css({
+                    display: "inline"
+                })
+        };
+        if (currentPoints > 100) {
+            $("#star2")
+                .css({
+                    display: "inline"
+                })
+        };
+        if (currentPoints > 150) {
+            $("#star3")
+                .css({
+                    display: "inline"
+                })
+        };
+        if (currentPoints > 200) {
+            $("#star4")
+                .css({
+                    display: "inline"
+                })
+        };
+        if (currentPoints > 250) {
+            $("#star5")
+                .css({
+                    display: "inline"
+                })
+        }
+    }
+
 
     function ifAnswerCorrect(category) {
         currentPoints += category;

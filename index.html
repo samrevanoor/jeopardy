@@ -22,7 +22,9 @@
     <div class="splash">
         <h1>WELCOME TO GAME OF THRONES JEOPARDY!</h1>
         <br><br>
-        <h3 class="level">choose your level: <button id="easy">easy</button>&nbsp;<button id="hard">hard</button>&nbsp;<button id="super-hard">super hard</button></h3></h3>
+        <h3 class="level">choose your level: <button id="easy">easy</button>&nbsp;<button
+                id="hard">hard</button>&nbsp;<button id="super-hard">super hard</button></h3>
+        </h3>
         <h3 class="name">and enter your name to start the game:</h3>
         <input type="text" id="player-name" maxlength="30">
         <button class="start-game">start</button>
@@ -106,8 +108,16 @@
             </div>
         </div>
         <div>
-            <h3 class="instruction">make a selection to play</h3>
+            <h3 class="upper-footer">
+                <span class="instruction">make a selection to play</span>
+                <span class="lower-instruction">collect as many stars as you can and avoid the dragon!</span>
+                <span class="star" id="star1" style="display: none">&starf;</span>
+                <span class="star" id="star2" style="display: none">&starf;</span>
+                <span class="star" id="star3" style="display: none">&starf;</span>
+                <span class="star" id="star4" style="display: none">&starf;</span>
+            </h3>
             <p>remember: spelling (kinda) counts so be careful!</p>
+            <span class="star" id="star5" style="display: none">&starf;</span>
             <div class="footer">
                 <h3>player name: <span class="player-name"></span>
                     <span class="level">level: <span id="player-level"></span></span>
