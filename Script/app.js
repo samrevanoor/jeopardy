@@ -6,6 +6,7 @@ $(document).ready(function () {
     let $playerName = $("#player-name").val();
     const $cardClick = $(".card-click");
     const $cardQuestion = $(".card-second-body h5");
+    const $hint = $("#hint");
     const $endGamePage = $(".end-game");
     const $resetGame = $(".reset-game")
     let $playerPoints = $(".current-points");
@@ -24,67 +25,82 @@ $(document).ready(function () {
         names: [{
             question: "Cersei's children are named Joffrey, Myrcella and ...",
             answer: ["tommen", "tommen baratheon", "tommen lannister", "tommin", "tomen"],
-            points: 10
+            points: 10,
+            hint: "hint: starts with a T"
         }, {
             question: "He is also known as the 'Spider' or the 'Master of Whisperers'.",
             answer: ["varys", "varis"],
-            points: 20
+            points: 20,
+            hint: "hint: starts with a V"
         }, {
             question: "This blacksmith was the illegitimate son of King Robert, born and raised in Flea Bottom.",
             answer: ["gendry", "gendry baratheon"],
-            points: 30
+            points: 30,
+            hint: "hint: starts with a G"
         }],
         deaths: [{
             question: "This 'dancing master' was killed by Meryn Trant.",
             answer: ["syrio", "syrio forel", "sirio", "cyrio"],
-            points: 10
+            points: 10,
+            hint: 'hint: "What do we say to the God of Death? Not today."'
         }, {
             question: "This Northerner was beheaded by King Joffrey at the end of season one.",
             answer: ["ned", "ned stark", "eddard stark", "eddard"],
-            points: 20
+            points: 20,
+            hint: "hint: you know this!"
         }, {
             question: "The name of Sansa Stark's direwolf, who was sentenced to death by King Robert.",
             answer: ["lady", "lady stark"],
-            points: 30
+            points: 30,
+            hint: "hint: _ & gentleman"
         }],
         houses: [{
             question: "The Rains of Castamere is associated with this house.",
             answer: ["house lannister", "lannister"],
-            points: 10
+            points: 10,
+            hint: "hint: ROAR!"
         }, {
             question: "This house's motto is 'Growing Strong'",
             answer: ["house tyrell", "tyrell"],
-            points: 20
+            points: 20,
+            hint: "hint: think 'flowers'"
         }, {
             question: "This house rules over the Iron Islands.",
             answer: ["house greyjoy", "greyjoy"],
-            points: 30
+            points: 30,
+            hint: "hint: starts with a G"
         }],
         images: [{
             question: '<h5>Who is this?</h5><img src="Pictures/easy1.gif">',
             answer: ["missandei", "misandei", "missandei of narth"],
-            points: 10
+            points: 10,
+            hint: "hint: miss..."
         }, {
             question: '<h5>Who is this?</h5><img src="Pictures/easy2.gif">',
             answer: ["littlefinger", "petyr baelish", "lord baelish", "petyr", "peter baelish", "little finger"],
-            points: 20
+            points: 20,
+            hint: "hint: bigtoe"
         }, {
             question: '<h5>Who is this?</h5><img src="Pictures/easy3.gif">',
-            answer: ["margaery", "margaery tyrell", "margery", "lady margaery", "lady margery", "lady tyrell"],
-            points: 30
+            answer: ["margaery", "margaery tyrell", "margery", "lady margaery", "lady margery", "lady tyrell", "margery tyrell"],
+            points: 30,
+            hint: "hint: another name for butter"
         }],
         other: [{
             question: '<h5>Which hand did this man lose?</h5><img src="Pictures/easy4.gif">',
             answer: ["right"],
-            points: 10
+            points: 10,
+            hint: "hint: one of two options!"
         }, {
             question: "<h5>This man volunteers to be Tyrion's champion in the Eyrie.</h5><img src='Pictures/easy5.gif'>",
             answer: ["bronn", "ser bronn", "bron"],
-            points: 20
+            points: 20,
+            hint: "hint: brains & _"
         }, {
             question: '<h5>What is the wedding of Edmure & Roslin Tully commonly called?</h5><img src="Pictures/easy6.png">',
             answer: ["red wedding", "the red wedding"],
-            points: 30
+            points: 30,
+            hint: "hint: it's a colour"
         }]
     }
 
@@ -92,67 +108,82 @@ $(document).ready(function () {
         names: [{
             question: "The Hound's real name is ...",
             answer: ["sandor", "sandor clegane"],
-            points: 10
+            points: 10,
+            hint: "hint: starts with an S"
         }, {
             question: "Daenerys' dragons were named Drogon, Viserion and ...",
             answer: ["rhaegal", "rheagal"],
-            points: 20
+            points: 20,
+            hint: "hint: starts with an R"
         }, {
             question: "Olenna Tyrell is also known as ...",
             answer: ["the queen of thorns", "queen of thorns"],
-            points: 30
+            points: 30,
+            hint: "hint: q_ of t_"
         }],
         deaths: [{
             question: "Arya Stark cooked this man's children and fed them to him.",
             answer: ["walder frey", "lord frey", "frey"],
-            points: 10
+            points: 10,
+            hint: "hint: starts with an F"
         }, {
             question: "This man's skull was crushed by the Mountain.",
-            answer: ["oberyn martell", "prince martell", "oberyn", "prince oberyn"],
-            points: 20
+            answer: ["oberyn martell", "prince martell", "oberyn", "prince oberyn", "viper", "the viper"],
+            points: 20,
+            hint: "hint: starts with an O"
         }, {
             question: "Lysa Arryn died by being pushed through the ...",
             answer: ["moondoor", "moon door"],
-            points: 30
+            points: 30,
+            hint: "hint: [something] door"
         }],
         houses: [{
             question: "Which house has a stag as its sigil?",
             answer: ["baratheon", "barathion", "bartheon", "barratheon"],
-            points: 10
+            points: 10,
+            hint: "hint: starts with a B"
         }, {
             question: "Jon Snow is half Stark and half ...",
             answer: ["targaryen", "tagaryen", "targayen"],
-            points: 20
+            points: 20,
+            hint: "hint: the song of ice and ..."
         }, {
             question: "What is House Lannister's official saying?",
             answer: ["hear me roar", "hear me roar!"],
-            points: 30
+            points: 30,
+            hint: "hint: ROAR!"
         }],
         images: [{
             question: '<h5>Who is this?</h5><img src="Pictures/hard1.gif">',
             answer: ["pod", "podrick", "podrick payne", "ser podrick payne"],
-            points: 10
+            points: 10,
+            hint: "hint: not Godric Gryffindor but ..."
         }, {
             question: '<h5>Who is this?</h5><img src="Pictures/hard2.gif">',
             answer: ["shireen", "shireen baratheon", "lady shireen"],
-            points: 20
+            points: 20,
+            hint: "hint: starts with a 'Sh'"
         }, {
             question: '<h5>Who is this?</h5><img src="Pictures/hard3.gif">',
             answer: ["tormund giantsbane", "tormund", "tormund giants bane", "tormund giantbane"],
-            points: 30
+            points: 30,
+            hint: "hint: starts with a T"
         }],
         other: [{
             question: '<h5>Which castle is this?</h5><img src="Pictures/castle1.jpeg">',
             answer: ["dragonstone", "dragon stone"],
-            points: 10
+            points: 10,
+            hint: "hint: mother of ..."
         }, {
             question: '<h5>Which castle is this?</h5><img src="Pictures/castle2.png">',
             answer: ["castle black"],
-            points: 20
+            points: 20,
+            hint: "hint: the headquarters of the Night's Watch's"
         }, {
             question: "<h5>Jaqen H'ghar helped Arya escape from ...</h5><img src='Pictures/castle3.jpeg'>",
             answer: ["harrenhal", "harren hal", "harrenhall", "harren hall"],
-            points: 30
+            points: 30,
+            hint: "hint: starts with an H"
         }]
     }
 
@@ -160,67 +191,82 @@ $(document).ready(function () {
         names: [{
             question: "Sansa Stark's first husband is ...",
             answer: ["tyrion", "tyrion lannister"],
-            points: 10
+            points: 10,
+            hint: "hint: she never married Joffrey"
         }, {
             question: "What is Jon Snow's birth name?",
             answer: ["aegon targaryen", "aegon"],
-            points: 20
+            points: 20,
+            hint: "hint: the biggest plot twist of the 21st century"
         }, {
             question: "What is Daenerys Targaryen's alternate last name?",
             answer: ["stormborn", "storm born"],
-            points: 30
+            points: 30,
+            hint: "hint: it's a reference to where she was born"
         }],
         deaths: [{
             question: "This Lord Commander of the Night's Watch was killed at Craster's Keep.",
             answer: ["mormont", "ser mormont", "jeor mormont", "ser jeor mormont", "lord mormont"],
-            points: 10
+            points: 10,
+            hint: "hint: Jorah's father"
         }, {
             question: "This Hand of the King was killed by his son while on the toilet.",
             answer: ["tywin lannister", "tywin", "lord tywin"],
-            points: 20
+            points: 20,
+            hint: "hint: starts with a T"
         }, {
             question: "This man was chased down and killed by his own hounds.",
             answer: ["ramsay", "ramsay snow", "ramsay bolton"],
-            points: 30
+            points: 30,
+            hint: "hint: starts with an R"
         }],
         houses: [{
             question: "Which house is Ser Brienne from?",
             answer: ["house tarth", "tarth"],
-            points: 10
+            points: 10,
+            hint: "hint: starts with a T"
         }, {
             question: "This house's sigil is a red sun pierced by a golden spear on an orange field.",
-            answer: ["house martell", "martell"],
-            points: 20
+            answer: ["house martell", "martell", "martel", "house martel"],
+            points: 20,
+            hint: "hint: the ruling house of Dorne"
         }, {
             question: "Where is Lady Talisa originally from?",
             answer: ["volantis", "valantis"],
-            points: 30
+            points: 30,
+            hint: "hint: starts with a V"
         }],
         images: [{
             question: '<h5>Who is this?</h5><img src="Pictures/superhard1.gif">',
             answer: ["hot pie", "hotpie", "hot-pie"],
-            points: 10
+            points: 10,
+            hint: "hint: he likes to bake!"
         }, {
             question: '<h5>Who is this?</h5><img src="Pictures/superhard2.gif">',
             answer: ["lyanna", "lyanna mormont", "lady mormont", "lady lyanna mormont"],
-            points: 20
+            points: 20,
+            hint: "hint: same name as Ned Stark's sister"
         }, {
             question: '<h5>Who is this?</h5><img src="Pictures/superhard3.gif">',
             answer: ["daario", "dario", "daario naharis", "dario naharis"],
-            points: 30
+            points: 30,
+            hint: "hint: starts with a D"
         }],
         other: [{
             question: '<h5>Where is this?</h5><img src="Pictures/superhard4.png">',
             answer: ["braavos", "bravos"],
-            points: 10
+            points: 10,
+            hint: "hint: starts with a B"
         }, {
             question: "<h5>Rickon Stark's direwolf was called ...</h5><img src='Pictures/superhard5.gif'>",
             answer: ["shaggydog", "shaggy dog"],
-            points: 20
+            points: 20,
+            hint: "hint: the name has 'dog' in it"
         }, {
             question: "<h5>Widow's Wail and Oathkeeper were forged from this ancestral sword of House Stark.</h5><img src='Pictures/superhard6.gif'>",
             answer: ["ice"],
-            points: 30
+            points: 30,
+            hint: "hint: COLD!"
         }]
     }
 
@@ -266,6 +312,7 @@ $(document).ready(function () {
             })
         currentPoints = 0;
         $playerPoints.html(currentPoints);
+        $hint.html("hint");
         $(".question").removeClass("disabled");
         gameLevel = "";
         playerAnswer = "";
@@ -342,6 +389,14 @@ $(document).ready(function () {
         }
     })
 
+    $('#player-answer').on("paste", function (e) {
+        e.preventDefault();
+    });
+
+    $("#player-answer").keypress(function () {
+        $("#submit-answer").html("submit")
+    })
+
     $resetGame.on("click", initGame);
 
     function letTheGamesBegin() {
@@ -400,6 +455,23 @@ $(document).ready(function () {
         renderCard();
         generateQuestion(currentQuestion, currentCategory);
         answeredQuestion(currentCategory);
+        generateHint(currentQuestion, currentCategory);
+    }
+
+    function generateHint(currentQuestion, currentCategory) {
+        $hint.on("click", function () {
+            if (currentCategory.contains("names")) {
+                $hint.html((game.names[currentQuestion].hint));
+            } else if (currentCategory.contains("deaths")) {
+                $hint.html(game.deaths[currentQuestion].hint);
+            } else if (currentCategory.contains("houses")) {
+                $hint.html(game.houses[currentQuestion].hint);
+            } else if (currentCategory.contains("images")) {
+                $hint.html(game.images[currentQuestion].hint);
+            } else if (currentCategory.contains("other")) {
+                $hint.html(game.other[currentQuestion].hint);
+            };
+        })
     }
 
     function renderCard() {
@@ -526,37 +598,37 @@ $(document).ready(function () {
         playerAnswer = $("#player-answer").val().trim().toLowerCase();
         if (currentCategory.contains("names")) {
             if (game.names[currentQuestion].answer.includes(playerAnswer)) {
-                isAnswerCorrect(game.names[currentQuestion].points)
+                ifAnswerCorrect(game.names[currentQuestion].points)
             } else {
-                isAnswerWrong()
+                ifAnswerWrong()
             }
         };
         if (currentCategory.contains("deaths")) {
             if (game.deaths[currentQuestion].answer.includes(playerAnswer)) {
-                isAnswerCorrect(game.deaths[currentQuestion].points)
+                ifAnswerCorrect(game.deaths[currentQuestion].points)
             } else {
-                isAnswerWrong()
+                ifAnswerWrong()
             }
         };
         if (currentCategory.contains("houses")) {
             if (game.houses[currentQuestion].answer.includes(playerAnswer)) {
-                isAnswerCorrect(game.houses[currentQuestion].points)
+                ifAnswerCorrect(game.houses[currentQuestion].points)
             } else {
-                isAnswerWrong()
+                ifAnswerWrong()
             }
         };
         if (currentCategory.contains("images")) {
             if (game.images[currentQuestion].answer.includes(playerAnswer)) {
-                isAnswerCorrect(game.images[currentQuestion].points)
+                ifAnswerCorrect(game.images[currentQuestion].points)
             } else {
-                isAnswerWrong()
+                ifAnswerWrong()
             }
         };
         if (currentCategory.contains("other")) {
             if (game.other[currentQuestion].answer.includes(playerAnswer)) {
-                isAnswerCorrect(game.other[currentQuestion].points)
+                ifAnswerCorrect(game.other[currentQuestion].points)
             } else {
-                isAnswerWrong()
+                ifAnswerWrong()
             }
         };
     }
@@ -578,9 +650,11 @@ $(document).ready(function () {
         if (isGameOver === true) {
             endGame();
         }
+        $("#submit-answer").html("skip")
+        $hint.html("hint")
     }
 
-    function isAnswerCorrect(category) {
+    function ifAnswerCorrect(category) {
         currentPoints += category;
         $playerPoints.html(currentPoints);
         confetti.start();
@@ -600,7 +674,7 @@ $(document).ready(function () {
         renderBoard();
     }
 
-    function isAnswerWrong() {
+    function ifAnswerWrong() {
         wrongCard();
         setTimeout(reverseWrongCard, 2000);
     }
