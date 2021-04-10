@@ -96,7 +96,6 @@ You can access my game via this direct link: [Jeopardy!](https://samrevanoor.git
 - CSS classes are so helpful to manipulate the styling dynamically
 - Start small, simple and skeletal, and build more complex ideas out as you go (instead of trying to do something really complicated right at the beginning)
 - You can do super cool things with JavaScript 😊
-<br>
 
 -------
 
