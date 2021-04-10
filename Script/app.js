@@ -526,7 +526,8 @@ $(document).ready(function () {
         let width = $(window).width();
         if (width > 600) {
             $("#player-answer").focus()
-        }
+        };
+        $("#player-answer").attr("placeholder", "")
     }
 
     function startTimer() {
