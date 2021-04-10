@@ -27,6 +27,7 @@ My game has a slight twist on Jeopardy, where I don't ask the player to enter th
 - Wrong answers do not change the player's total points
 - The maximum points a player can get is 300 (if they guess every question correctly)
 - The minimum points a player can get is 0 (if they guess every question incorrectly)
+- Some questions offer bonus stars as well! If you get those right, you get a star (maximum: 5 stars per level)
 - Player will only have one chance to answer each question
 - Player can reset the game at any time
 
@@ -88,8 +89,20 @@ You can access my game via this direct link: [Jeopardy!](https://samrevanoor.git
 
 -------
 
+### **Key Takeaways**
+
+- `console.log` is my very best friend!
+- Variables are my second best friend! Once I became comfortable with variables, I felt like anything was possible
+- CSS classes are so helpful to manipulate the styling dynamically
+- Start small, simple and skeletal, and build more complex ideas out as you go (instead of trying to do something really complicated right at the beginning)
+- You can do super cool things with JavaScript 😊
+<br>
+
+-------
+
 ### **Things I'm Proud Of**
 
+- This game was a labour of love! I'm very pleased with how it turned out especially after only 4 weeks of exposure to web development
 - Implementing the confetti when the player guesses correctly
 - Adding and timing sound effects based on the player's answer (or lack thereof)
 - After a *lot* of trial and error, figuring out my timers!
@@ -121,6 +134,7 @@ You can access my game via this direct link: [Jeopardy!](https://samrevanoor.git
 - Building out more levels
 - Adding bonus points for correct spelling
 - Adding a progress bar
+- Build more variations of Jeopardy (for example: Harry Potter, Marvel, etc.)
 
 -------
 
