@@ -1,6 +1,11 @@
 # Game of Thrones-themed Jeopardy!
 ## by Sam Revanoor
 
+### **Objective**
+
+To create a browser game using front-end technologies (HTML, CSS and JavaScript).
+
+--------
 
 ### **Background**
 
